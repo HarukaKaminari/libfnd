@@ -1,0 +1,58 @@
+C51 COMPILER V9.52.0.0   MAIN                                                              12/12/2017 19:45:47 PAGE 1   
+
+
+C51 COMPILER V9.52.0.0, COMPILATION OF MODULE MAIN
+OBJECT MODULE PLACED IN main.OBJ
+COMPILER INVOKED BY: C:\Keil\C51\BIN\C51.EXE main.c OPTIMIZE(9,SPEED) BROWSE FLOATFUZZY(4) DEBUG OBJECTEXTEND
+
+line level    source
+
+   1          #include "../libfnd/Timer.h"
+   2          
+   3          
+   4          static void Timer_Callback(){
+   5   1              P0 = ~P0;
+   6   1      }
+   7          
+   8          static void Init(){
+   9   1              P0M0 = 0;
+  10   1              P0M1 = 0;
+  11   1              P1M0 = 0;
+  12   1              P1M1 = 0;
+  13   1              P2M0 = 0;
+  14   1              P2M1 = 0;
+  15   1              P3M0 = 0;
+  16   1              P3M1 = 0;
+  17   1              P4M0 = 0;
+  18   1              P4M1 = 0;
+  19   1              P0 = 0xFF;
+  20   1              P1 = 0xFF;
+  21   1              P2 = 0xFF;
+  22   1              P3 = 0xFF;
+  23   1              P4 = 0xFF;
+  24   1      }
+  25          
+  26          void main(){
+  27   1              Init();
+  28   1              Timer_Init();
+  29   1              Timer_SetCallback(Timer_Callback);
+  30   1              Timer_Start();
+  31   1              
+  32   1              while(1){
+  33   2                      
+  34   2              }
+  35   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =     61    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

@@ -1,0 +1,6 @@
+"main.obj",
+".\Uart.obj",
+".\Utility.obj",
+".\Timer.obj" 
+TO "test1usPulse" 
+RAMSIZE(256) 

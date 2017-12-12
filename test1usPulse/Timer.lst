@@ -1,0 +1,58 @@
+C51 COMPILER V9.52.0.0   TIMER                                                             12/12/2017 19:45:47 PAGE 1   
+
+
+C51 COMPILER V9.52.0.0, COMPILATION OF MODULE TIMER
+OBJECT MODULE PLACED IN .\Timer.obj
+COMPILER INVOKED BY: C:\Keil\C51\BIN\C51.EXE ..\libfnd\Timer.c OPTIMIZE(9,SPEED) BROWSE FLOATFUZZY(4) DEBUG OBJECTEXTEND
+                    - PRINT(.\Timer.lst) OBJECT(.\Timer.obj)
+
+line level    source
+
+   1          #include "Timer.h"
+   2          
+   3          
+   4          static Func_TimerCallback timerCallback = 0;
+   5          
+   6          
+   7          static void Timer0_Isr() interrupt 1 using 1{
+   8   1              if(timerCallback){
+   9   2                      timerCallback();
+  10   2              }
+  11   1      }
+  12          
+  13          void Timer_Init(){
+  14   1              AUXR |= 0x80;           // 定时器时钟1T模式
+  15   1              TMOD &= 0xF0;
+  16   1              TMOD |= 0x02;           // 设置定时器模式
+  17   1              TL0 = 0xE2;                     // 设置定时初值
+  18   1              TH0 = 0xE2;                     // 设置定时重载值
+  19   1              TF0 = 0;                        // 清除TF0标志
+  20   1              ET0 = 1;                        // 允许Timer0中断
+  21   1              EA = 1;                         // 开启中断总开关
+  22   1      }
+  23          
+  24          void Timer_SetCallback(Func_TimerCallback callback){
+  25   1              timerCallback = callback;
+  26   1      }
+  27          
+  28          void Timer_Start(){
+  29   1              TR0 = 1;
+  30   1      }
+  31          
+  32          void Timer_Stop(){
+  33   1              TR0 = 0;
+  34   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =     74    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =      3    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)
