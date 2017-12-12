@@ -1,0 +1,7 @@
+"main.obj",
+".\I2C.obj",
+".\Uart.obj",
+".\Utility.obj",
+".\WiiClassicController.obj" 
+TO "testWiiClassicController" 
+RAMSIZE(256) 

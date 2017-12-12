@@ -1,0 +1,242 @@
+C51 COMPILER V9.52.0.0   LCM12864                                                          12/12/2017 17:05:20 PAGE 1   
+
+
+C51 COMPILER V9.52.0.0, COMPILATION OF MODULE LCM12864
+OBJECT MODULE PLACED IN .\LCM12864.obj
+COMPILER INVOKED BY: C:\Keil\C51\BIN\C51.EXE ..\libfnd\LCM12864.c BROWSE DEFINE(USE_HARDWARE_SPI,LCM_DRIVER_IST3932) DEB
+                    -UG OBJECTEXTEND PRINT(.\LCM12864.lst) OBJECT(.\LCM12864.obj)
+
+line level    source
+
+   1          #include <string.h>
+   2          #include "LCM12864.h"
+   3          #if defined LCM_DRIVER_UC1701X
+              #include "UC1701X.h"
+              #elif defined LCM_DRIVER_IST3932
+   6          #include "IST3932.h"
+   7          #elif defined LCM_DRIVER_SSD1306
+              #include "SSD1306.h"
+              #endif
+  10          #include "SPI.h"
+  11          //#include "WinbondFlash.h"
+  12          #include "FontText.h"
+  13          
+  14          
+  15          #ifndef ABS
+  16          #define ABS(a)  ((a) > 0 ? (a) : -(a))
+  17          #endif
+  18          
+  19          
+  20          #ifdef USE_12832
+              u8 xdata VRAM[512];             // 12832的显存为512字节
+              #else
+  23          u8 xdata VRAM[1024];    // 12864的显存为1K字节
+  24          #endif
+  25          u16 xdata tmpBuf[0x10]; // 16*2的字模缓冲区
+  26          
+  27          
+  28          void LCM12864_SendCommand(u8 value){
+  29   1              LCM12864_CS = 0;
+  30   1              LCM12864_CD = 0;
+  31   1              SPI_SendAndReceive(value);
+  32   1      }
+  33          
+  34          void LCM12864_SendData(u8 value){
+  35   1              LCM12864_CS = 0;
+  36   1              LCM12864_CD = 1;
+  37   1              SPI_SendAndReceive(value);
+  38   1      }
+  39          
+  40          void LCM12864_Init(){
+  41   1              P0M0 &= 0xCF;
+  42   1              P0M1 &= 0xCF;   // 设置/CS和CD为准双向
+  43   1              P0M0 |= 0x20;
+  44   1              P0M1 &= 0xDF;   // 设置LED为强推挽
+  45   1              
+  46   1      #if defined LCM_DRIVER_UC1701X
+                      UC1701X_Init();
+              #elif defined LCM_DRIVER_IST3932
+  49   1              IST3932_Init();
+  50   1      #elif defined LCM_DRIVER_SSD1306
+                      SSD1306_Init();
+              #endif
+  53   1      }
+  54          
+C51 COMPILER V9.52.0.0   LCM12864                                                          12/12/2017 17:05:20 PAGE 2   
+
+  55          void LCM12864_Clear(){
+  56   1              memset(VRAM, 0, sizeof(VRAM));
+  57   1      }
+  58          
+  59          void LCM12864_Refresh(){
+  60   1      #if defined LCM_DRIVER_UC1701X
+                      UC1701X_Refresh();
+              #elif defined LCM_DRIVER_IST3932
+  63   1              IST3932_Refresh();
+  64   1      #elif defined LCM_DRIVER_SSD1306
+                      SSD1306_Refresh();
+              #endif
+  67   1      }
+  68          
+  69          /*
+  70          打开/关闭背光
+  71          */
+  72          void LCM12864_Backlight(bit isOn){
+  73   1              LCM12864_LED = isOn;
+  74   1      }
+  75          
+  76          /*
+  77          从字符获得32位地址偏移量
+  78          */
+  79          static u32 LCM12864_GetOffsetFromChar(u8 fontSize, u16 chr){
+  80   1              //u8 hi = chr >> 8;
+  81   1              //u8 lo = chr & 0xFF;
+  82   1              //u32 offset = ((lo - 0x40) + (0xFE - 0x40 + 1) * (hi - 0x81)) * 2 * fontSize;
+  83   1              //return offset;
+  84   1              u8 i = 0;
+  85   1              for(;i<CHARACTER_COUNT;++i){
+  86   2                      if(textMap[i] == chr)
+  87   2                              break;
+  88   2              }
+  89   1              if(i >= CHARACTER_COUNT)
+  90   1                      i = 0;
+  91   1      
+  92   1              return i * 2 * fontSize;
+  93   1      }
+  94          
+  95          static void WinbondFlash_Read(u32 offset, u8* buf, u8 size){
+  96   1              memcpy(buf, fontText + offset, size);
+  97   1      }
+  98          
+  99          void LCM12864_DrawChar(u8 fontSize, u16 chr, s8 x, s8 y, bit c){
+ 100   1              WinbondFlash_Read(LCM12864_GetOffsetFromChar(fontSize, chr), (u8*)tmpBuf, fontSize * sizeof(u16));
+ 101   1      #if defined LCM_DRIVER_UC1701X
+                      UC1701X_DrawChar(fontSize, x, y, c);
+              #elif defined LCM_DRIVER_IST3932
+ 104   1              IST3932_DrawChar(fontSize, x, y, c);
+ 105   1      #elif defined LCM_DRIVER_SSD1306
+                      SSD1366_DrawChar(fontSize, x, y, c);
+              #endif
+ 108   1      }
+ 109          
+ 110          void LCM12864_DrawString(u8 fontSize, const char* str, s16 x, s16 y, bit c){
+ 111   1              u8 i = 0, len = strlen(str);
+ 112   1              while(i < len){
+ 113   2                      if((u8)str[i] < 0x81){
+ 114   3                  if(x >= -fontSize && x <= 127)
+ 115   3                      LCM12864_DrawChar(fontSize, str[i], x, y, c);
+ 116   3                              i++;
+C51 COMPILER V9.52.0.0   LCM12864                                                          12/12/2017 17:05:20 PAGE 3   
+
+ 117   3                              x += (fontSize >> 1);
+ 118   3                      }else{
+ 119   3                              u16 tmp = str[i];
+ 120   3                              tmp <<= 8;
+ 121   3                              tmp |= (u8)str[i + 1];
+ 122   3                  if(x >= -fontSize && x <= 127)
+ 123   3                      LCM12864_DrawChar(fontSize, tmp, x, y, c);
+ 124   3                              i += 2;
+ 125   3                              x += fontSize;
+ 126   3                      }
+ 127   2              }
+ 128   1      }
+ 129          
+ 130          /*
+ 131          在缓冲区任意位置画点
+ 132          */
+ 133          void LCM12864_DrawPixel(u8 x, u8 y, bit c){
+ 134   1      #if defined LCM_DRIVER_UC1701X
+                      UC1701X_DrawPixel(x, y, c);
+              #elif defined LCM_DRIVER_IST3932
+ 137   1              IST3932_DrawPixel(x, y, c);
+ 138   1      #elif defined LCM_DRIVER_SSD1306
+                      SSD1306_DrawPixel(x, y, c);
+              #endif
+ 141   1      }
+ 142          
+ 143          /*
+ 144          在缓冲区任意位置画直线
+ 145          */
+ 146          void LCM12864_DrawLine(u8 x0, u8 y0, u8 x1, u8 y1, bit c){
+ 147   1              s8 dx = x1 - x0;
+ 148   1              s8 dy = y1 - y0;
+ 149   1              s8 ux = ((dx > 0) << 1) - 1;    // x的增量方向，正负1
+ 150   1              s8 uy = ((dy > 0) << 1) - 1;    // y的增量方向，正负1
+ 151   1              s8 x = x0, y = y0, eps = 0;             // eps为累加误差
+ 152   1      
+ 153   1              dx = ABS(dx);
+ 154   1              dy = ABS(dy); 
+ 155   1              if(dx > dy){
+ 156   2                      for(;x!=x1;x+=ux){
+ 157   3                              LCM12864_DrawPixel(x, y, c);
+ 158   3                              eps += dy;
+ 159   3                              if((eps << 1) >= dx){
+ 160   4                                      y += uy;
+ 161   4                                      eps -= dx;
+ 162   4                              }
+ 163   3                      }
+ 164   2              }else{
+ 165   2                      for(;y!=y1;y+=uy){
+ 166   3                              LCM12864_DrawPixel(x, y, c);
+ 167   3                              eps += dx;
+ 168   3                              if((eps << 1) >= dy){
+ 169   4                                      x += ux;
+ 170   4                                      eps -= dy;
+ 171   4                              }
+ 172   3                      }
+ 173   2              }
+ 174   1      }
+ 175          
+ 176          /*
+ 177          在缓冲区任意位置填充矩形
+ 178          */
+C51 COMPILER V9.52.0.0   LCM12864                                                          12/12/2017 17:05:20 PAGE 4   
+
+ 179          void LCM12864_FillRect(u8 x, u8 y, u8 w, u8 h, bit c){
+ 180   1      #if defined LCM_DRIVER_UC1701X
+                      UC1701X_FillRect(x, y, w, h, c);
+              #elif defined LCM_DRIVER_IST3932
+ 183   1              IST3932_FillRect(x, y, w, h, c);
+ 184   1      #elif defined LCM_DRIVER_SSD1306
+                      SSD1306_FillRect(x, y, w, h, c);
+              #endif
+ 187   1      }
+ 188          
+ 189          /*
+ 190          在缓冲区任意位置画圆
+ 191          */
+ 192          void LCM12864_DrawCircle(u8 x1, u8 y1, u8 r, bit c){
+ 193   1              s16 x = 0, y = r;
+ 194   1              s8 d = 1 - r;
+ 195   1              while(y > x){
+ 196   2                      LCM12864_DrawPixel(x1 + x, y1 + y, c);
+ 197   2                      LCM12864_DrawPixel(x1 + y, y1 + x, c);
+ 198   2                      LCM12864_DrawPixel(x1 - x, y1 + y, c);
+ 199   2                      LCM12864_DrawPixel(x1 - y, y1 + x, c);
+ 200   2                      LCM12864_DrawPixel(x1 - x, y1 - y, c);
+ 201   2                      LCM12864_DrawPixel(x1 - y, y1 - x, c);
+ 202   2                      LCM12864_DrawPixel(x1 + x, y1 - y, c);
+ 203   2                      LCM12864_DrawPixel(x1 + y, y1 - x, c);
+ 204   2                      if(d < 0){
+ 205   3                              d += 2 * x + 3;
+ 206   3                      }else{
+ 207   3                              d += 2 * (x - y) + 5;
+ 208   3                              y--;
+ 209   3                      }
+ 210   2                      x++;
+ 211   2              }
+ 212   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    906    ----
+   CONSTANT SIZE    =   4554    ----
+   XDATA SIZE       =   1056    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----      47
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----       7
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

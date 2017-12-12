@@ -1,0 +1,7 @@
+"main.obj",
+".\IST3932.obj",
+".\LCM12864.obj",
+".\SPI.obj",
+".\Utility.obj" 
+TO "testIST3932" 
+RAMSIZE(256) 

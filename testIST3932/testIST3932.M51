@@ -1,0 +1,1057 @@
+BL51 BANKED LINKER/LOCATER V6.22                                                        12/12/2017  17:05:21  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V6.22, INVOKED BY:
+C:\KEIL\C51\BIN\BL51.EXE main.obj, .\IST3932.obj, .\LCM12864.obj, .\SPI.obj, .\Utility.obj TO testIST3932 RAMSIZE (256)
+
+
+MEMORY MODEL: SMALL
+
+
+INPUT MODULES INCLUDED:
+  main.obj (MAIN)
+  .\IST3932.obj (IST3932)
+  .\LCM12864.obj (LCM12864)
+  .\SPI.obj (SPI)
+  .\Utility.obj (UTILITY)
+  C:\KEIL\C51\LIB\C51S.LIB (?C_STARTUP)
+  C:\KEIL\C51\LIB\C51S.LIB (?C?COPY)
+  C:\KEIL\C51\LIB\C51S.LIB (?C?CLDOPTR)
+  C:\KEIL\C51\LIB\C51S.LIB (?C?CSTPTR)
+  C:\KEIL\C51\LIB\C51S.LIB (?C?CSTOPTR)
+  C:\KEIL\C51\LIB\C51S.LIB (?C?IMUL)
+  C:\KEIL\C51\LIB\C51S.LIB (?C?UIDIV)
+  C:\KEIL\C51\LIB\C51S.LIB (STRLEN)
+  C:\KEIL\C51\LIB\C51S.LIB (?C?MEMSET)
+  C:\KEIL\C51\LIB\C51S.LIB (?C?CLDPTR)
+
+
+LINK MAP OF MODULE:  testIST3932 (MAIN)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+            DATA    0008H     000CH     UNIT         ?DT?_LCM12864_DRAWSTRING?LCM12864
+            DATA    0014H     000BH     UNIT         ?DT?_LCM12864_DRAWLINE?LCM12864
+            DATA    001FH     0001H     UNIT         ?DT?_IST3932_SETSTARTINGLINE?IST3932
+            BIT     0020H.0   0000H.4   UNIT         _BIT_GROUP_
+            BIT     0020H.4   0000H.1   UNIT         ?BI?IST3932_SLEEP?IST3932
+            BIT     0020H.5   0000H.1   UNIT         ?BI?IST3932_OSC?IST3932
+            BIT     0020H.6   0000H.1   UNIT         ?BI?_IST3932_DRAWCHAR?IST3932
+            BIT     0020H.7   0000H.1   UNIT         ?BI?_IST3932_FILLRECT?IST3932
+            BIT     0021H.0   0000H.1   UNIT         ?BI?_LCM12864_DRAWCHAR?LCM12864
+            BIT     0021H.1   0000H.1   UNIT         ?BI?_LCM12864_DRAWSTRING?LCM12864
+            BIT     0021H.2   0000H.1   UNIT         ?BI?_LCM12864_DRAWLINE?LCM12864
+            BIT     0021H.3   0000H.1   UNIT         ?BI?_LCM12864_FILLRECT?LCM12864
+            BIT     0021H.4   0000H.1   UNIT         ?BI?_LCM12864_DRAWCIRCLE?LCM12864
+                    0021H.5   0000H.3                *** GAP ***
+            DATA    0022H     0009H     UNIT         ?DT?_IST3932_FILLRECT?IST3932
+            DATA    002BH     0008H     UNIT         ?DT?_IST3932_DRAWCHAR?IST3932
+            DATA    0033H     0008H     UNIT         ?DT?_WINBONDFLASH_READ?LCM12864
+            DATA    003BH     0007H     UNIT         ?DT?_LCM12864_DRAWCIRCLE?LCM12864
+            DATA    0042H     0005H     UNIT         ?DT?_LCM12864_DRAWCHAR?LCM12864
+            DATA    0047H     0004H     UNIT         ?DT?_LCM12864_FILLRECT?LCM12864
+            DATA    004BH     0004H     UNIT         ?DT?_DEC2STRING?UTILITY
+            DATA    004FH     0004H     UNIT         _DATA_GROUP_
+            IDATA   0053H     0001H     UNIT         ?STACK
+
+            * * * * * * *  X D A T A   M E M O R Y  * * * * * * *
+BL51 BANKED LINKER/LOCATER V6.22                                                      12/12/2017  17:05:21  PAGE 2
+
+
+            XDATA   0000H     0420H     UNIT         ?XD?LCM12864
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     0003H     ABSOLUTE     
+            CODE    0003H     11CAH     UNIT         ?CO?LCM12864
+            CODE    11CDH     0280H     UNIT         ?PR?_IST3932_DRAWCHAR?IST3932
+            CODE    144DH     0203H     UNIT         ?C?LIB_CODE
+            CODE    1650H     01DCH     UNIT         ?PR?_IST3932_FILLRECT?IST3932
+            CODE    182CH     0110H     UNIT         ?PR?_LCM12864_DRAWLINE?LCM12864
+            CODE    193CH     00E6H     UNIT         ?PR?_LCM12864_DRAWSTRING?LCM12864
+            CODE    1A22H     00BEH     UNIT         ?PR?_LCM12864_DRAWCIRCLE?LCM12864
+            CODE    1AE0H     00A8H     UNIT         ?PR?_DEC2STRING?UTILITY
+            CODE    1B88H     0076H     UNIT         ?PR?_IST3932_DRAWPIXEL?IST3932
+            CODE    1BFEH     005AH     UNIT         ?PR?IST3932_REFRESH?IST3932
+            CODE    1C58H     0042H     UNIT         ?PR?IST3932_INIT?IST3932
+            CODE    1C9AH     003CH     UNIT         ?PR?_LCM12864_GETOFFSETFROMCHAR?LCM12864
+            CODE    1CD6H     003CH     UNIT         ?PR?_HEX2STRING?UTILITY
+            CODE    1D12H     0028H     UNIT         ?PR?INIT?MAIN
+            CODE    1D3AH     0027H     UNIT         ?PR?_WINBONDFLASH_READ?LCM12864
+            CODE    1D61H     0023H     UNIT         ?PR?_LCM12864_DRAWCHAR?LCM12864
+            CODE    1D84H     001EH     UNIT         ?PR?MAIN?MAIN
+            CODE    1DA2H     001DH     UNIT         ?PR?IST3932_DRIVERCONTROL?IST3932
+            CODE    1DBFH     0019H     UNIT         ?PR?_DELAY?UTILITY
+            CODE    1DD8H     0017H     UNIT         ?PR?_IST3932_SETSTARTINGLINE?IST3932
+            CODE    1DEFH     0017H     UNIT         ?PR?_IST3932_SETDUTY?IST3932
+            CODE    1E06H     0015H     UNIT         ?PR?_IST3932_SETROW?IST3932
+            CODE    1E1BH     0015H     UNIT         ?PR?_STRLEN?STRLEN
+            CODE    1E30H     0014H     UNIT         ?PR?IST3932_BEGINIST?IST3932
+            CODE    1E44H     0013H     UNIT         ?PR?_IST3932_SETFRAMECONTROL?IST3932
+            CODE    1E57H     0013H     UNIT         ?PR?SPI_INIT?SPI
+            CODE    1E6AH     0012H     UNIT         ?PR?_LCM12864_DRAWPIXEL?LCM12864
+            CODE    1E7CH     000FH     UNIT         ?CO?IST3932
+            CODE    1E8BH     000FH     UNIT         ?PR?LCM12864_INIT?LCM12864
+            CODE    1E9AH     000FH     UNIT         ?PR?LCM12864_CLEAR?LCM12864
+            CODE    1EA9H     000DH     UNIT         ?PR?IST3932_POWER?IST3932
+            CODE    1EB6H     000DH     UNIT         ?PR?IST3932_SLEEP?IST3932
+            CODE    1EC3H     000DH     UNIT         ?PR?IST3932_OSC?IST3932
+            CODE    1ED0H     000DH     UNIT         ?PR?IST3932_DISPLAY?IST3932
+            CODE    1EDDH     000DH     UNIT         ?PR?IST3932_SETINTERLEAVE?IST3932
+            CODE    1EEAH     000DH     UNIT         ?PR?_SPI_SENDANDRECEIVE?SPI
+            CODE    1EF7H     000CH     UNIT         ?PR?_IST3932_SETCONTRAST?IST3932
+            CODE    1F03H     000CH     UNIT         ?C_C51STARTUP
+            CODE    1F0FH     000AH     UNIT         ?PR?_LCM12864_FILLRECT?LCM12864
+            CODE    1F19H     0009H     UNIT         ?PR?_IST3932_SETBIAS?IST3932
+            CODE    1F22H     0009H     UNIT         ?PR?_IST3932_SETCOL?IST3932
+            CODE    1F2BH     0007H     UNIT         ?PR?_LCM12864_SENDCOMMAND?LCM12864
+            CODE    1F32H     0007H     UNIT         ?PR?_LCM12864_SENDDATA?LCM12864
+            CODE    1F39H     0005H     UNIT         ?PR?IST3932_SOFTRESET?IST3932
+            CODE    1F3EH     0005H     UNIT         ?PR?IST3932_NOP?IST3932
+            CODE    1F43H     0005H     UNIT         ?PR?IST3932_ENDIST?IST3932
+            CODE    1F48H     0005H     UNIT         ?PR?LCM12864_BACKLIGHT?LCM12864
+            CODE    1F4DH     0003H     UNIT         ?PR?LCM12864_REFRESH?LCM12864
+
+
+
+OVERLAY MAP OF MODULE:   testIST3932 (MAIN)
+
+BL51 BANKED LINKER/LOCATER V6.22                                                      12/12/2017  17:05:21  PAGE 3
+
+
+
+SEGMENT                                             BIT_GROUP          DATA_GROUP 
+  +--> CALLED SEGMENT                            START    LENGTH     START    LENGTH
+------------------------------------------------------------------------------------
+?C_C51STARTUP                                    -----    -----      -----    -----
+  +--> ?PR?MAIN?MAIN
+
+?PR?MAIN?MAIN                                    -----    -----      -----    -----
+  +--> ?PR?INIT?MAIN
+  +--> ?PR?SPI_INIT?SPI
+  +--> ?PR?LCM12864_INIT?LCM12864
+  +--> ?PR?LCM12864_BACKLIGHT?LCM12864
+  +--> ?PR?LCM12864_CLEAR?LCM12864
+  +--> ?PR?_LCM12864_DRAWPIXEL?LCM12864
+  +--> ?PR?LCM12864_REFRESH?LCM12864
+
+?PR?LCM12864_INIT?LCM12864                       -----    -----      -----    -----
+  +--> ?PR?IST3932_INIT?IST3932
+
+?PR?IST3932_INIT?IST3932                         -----    -----      -----    -----
+  +--> ?PR?_DELAY?UTILITY
+  +--> ?PR?IST3932_POWER?IST3932
+  +--> ?PR?_IST3932_SETBIAS?IST3932
+  +--> ?PR?_IST3932_SETCONTRAST?IST3932
+  +--> ?PR?_IST3932_SETFRAMECONTROL?IST3932
+  +--> ?PR?_IST3932_SETDUTY?IST3932
+  +--> ?PR?IST3932_DRIVERCONTROL?IST3932
+  +--> ?PR?IST3932_DISPLAY?IST3932
+  +--> ?PR?IST3932_BEGINIST?IST3932
+  +--> ?PR?IST3932_SETINTERLEAVE?IST3932
+  +--> ?PR?IST3932_ENDIST?IST3932
+
+?PR?_DELAY?UTILITY                               -----    -----      004FH    0002H
+
+?PR?IST3932_POWER?IST3932                        0020H.0  0000H.1    -----    -----
+  +--> ?PR?_LCM12864_SENDCOMMAND?LCM12864
+
+?PR?_LCM12864_SENDCOMMAND?LCM12864               -----    -----      -----    -----
+  +--> ?PR?_SPI_SENDANDRECEIVE?SPI
+
+?PR?_IST3932_SETBIAS?IST3932                     -----    -----      -----    -----
+  +--> ?PR?_LCM12864_SENDCOMMAND?LCM12864
+
+?PR?_IST3932_SETCONTRAST?IST3932                 -----    -----      004FH    0001H
+  +--> ?PR?_LCM12864_SENDCOMMAND?LCM12864
+
+?PR?_IST3932_SETFRAMECONTROL?IST3932             -----    -----      004FH    0002H
+  +--> ?PR?_LCM12864_SENDCOMMAND?LCM12864
+
+?PR?_IST3932_SETDUTY?IST3932                     -----    -----      004FH    0001H
+  +--> ?PR?_LCM12864_SENDCOMMAND?LCM12864
+
+?PR?IST3932_DRIVERCONTROL?IST3932                0020H.0  0000H.4    -----    -----
+  +--> ?PR?_LCM12864_SENDCOMMAND?LCM12864
+
+?PR?IST3932_DISPLAY?IST3932                      0020H.0  0000H.1    -----    -----
+  +--> ?PR?_LCM12864_SENDCOMMAND?LCM12864
+BL51 BANKED LINKER/LOCATER V6.22                                                      12/12/2017  17:05:21  PAGE 4
+
+
+
+?PR?IST3932_BEGINIST?IST3932                     -----    -----      -----    -----
+  +--> ?PR?_LCM12864_SENDCOMMAND?LCM12864
+
+?PR?IST3932_SETINTERLEAVE?IST3932                0020H.0  0000H.1    -----    -----
+  +--> ?PR?_LCM12864_SENDCOMMAND?LCM12864
+
+?PR?IST3932_ENDIST?IST3932                       -----    -----      -----    -----
+  +--> ?PR?_LCM12864_SENDCOMMAND?LCM12864
+
+?PR?LCM12864_BACKLIGHT?LCM12864                  0020H.0  0000H.1    -----    -----
+
+?PR?_LCM12864_DRAWPIXEL?LCM12864                 0020H.0  0000H.1    -----    -----
+  +--> ?PR?_IST3932_DRAWPIXEL?IST3932
+
+?PR?_IST3932_DRAWPIXEL?IST3932                   0020H.1  0000H.1    -----    -----
+
+?PR?LCM12864_REFRESH?LCM12864                    -----    -----      -----    -----
+  +--> ?PR?IST3932_REFRESH?IST3932
+
+?PR?IST3932_REFRESH?IST3932                      -----    -----      004FH    0003H
+  +--> ?PR?_IST3932_SETROW?IST3932
+  +--> ?PR?_IST3932_SETCOL?IST3932
+  +--> ?CO?IST3932
+  +--> ?PR?_LCM12864_SENDDATA?LCM12864
+
+?PR?_IST3932_SETROW?IST3932                      -----    -----      0052H    0001H
+  +--> ?PR?_LCM12864_SENDCOMMAND?LCM12864
+
+?PR?_IST3932_SETCOL?IST3932                      -----    -----      -----    -----
+  +--> ?PR?_LCM12864_SENDCOMMAND?LCM12864
+
+?PR?_LCM12864_SENDDATA?LCM12864                  -----    -----      -----    -----
+  +--> ?PR?_SPI_SENDANDRECEIVE?SPI
+
+
+
+SYMBOL TABLE OF MODULE:  testIST3932 (MAIN)
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+  -------         MODULE        MAIN
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  D:0092H         PUBLIC        P1M0
+  D:0093H         PUBLIC        P0M1
+  D:0096H         PUBLIC        P2M0
+  D:0091H         PUBLIC        P1M1
+  D:0080H         PUBLIC        P0
+  D:00B2H         PUBLIC        P3M0
+  D:0095H         PUBLIC        P2M1
+  D:0090H         PUBLIC        P1
+  D:00B4H         PUBLIC        P4M0
+  D:00B1H         PUBLIC        P3M1
+  D:00A0H         PUBLIC        P2
+  D:00B3H         PUBLIC        P4M1
+  D:00B0H         PUBLIC        P3
+BL51 BANKED LINKER/LOCATER V6.22                                                      12/12/2017  17:05:21  PAGE 5
+
+
+  D:00C0H         PUBLIC        P4
+  D:00A8H         PUBLIC        IE
+  C:1D12H         SYMBOL        Init
+  D:00B8H         PUBLIC        IP
+  D:00D8H         PUBLIC        CCON
+  C:1D84H         PUBLIC        main
+  D:00BBH         PUBLIC        P4SW
+  D:0098H         PUBLIC        SCON
+  D:0088H         PUBLIC        TCON
+  D:00D0H         PUBLIC        PSW
+  D:0094H         PUBLIC        P0M0
+  -------         PROC          INIT
+  C:1D12H         LINE#         7
+  C:1D12H         LINE#         8
+  C:1D15H         LINE#         9
+  C:1D1AH         LINE#         10
+  C:1D1EH         LINE#         11
+  C:1D22H         LINE#         12
+  C:1D26H         LINE#         13
+  C:1D2AH         LINE#         14
+  C:1D2DH         LINE#         15
+  C:1D30H         LINE#         16
+  C:1D33H         LINE#         17
+  C:1D36H         LINE#         18
+  C:1D39H         LINE#         19
+  -------         ENDPROC       INIT
+  -------         PROC          MAIN
+  C:1D84H         LINE#         21
+  C:1D84H         LINE#         22
+  C:1D87H         LINE#         23
+  C:1D8AH         LINE#         24
+  C:1D8DH         LINE#         26
+  C:1D92H         LINE#         27
+  C:1D92H         LINE#         28
+  C:1D95H         LINE#         30
+  C:1D9DH         LINE#         31
+  C:1DA0H         LINE#         32
+  -------         ENDPROC       MAIN
+  -------         ENDMOD        MAIN
+
+  -------         MODULE        IST3932
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  C:1ED0H         SYMBOL        IST3932_Display
+  D:0080H         PUBLIC        P0
+  C:1E7CH         SYMBOL        reverse
+  C:1E06H         SYMBOL        _IST3932_SetRow
+  D:00A8H         PUBLIC        IE
+  D:00B8H         PUBLIC        IP
+  C:1EB6H         SYMBOL        IST3932_Sleep
+  D:00D8H         PUBLIC        CCON
+  C:1EF7H         SYMBOL        _IST3932_SetContrast
+  C:1E44H         SYMBOL        _IST3932_SetFrameControl
+  C:1F43H         SYMBOL        IST3932_EndIST
+  C:1DD8H         SYMBOL        _IST3932_SetStartingLine
+  C:1EA9H         SYMBOL        IST3932_Power
+  D:0098H         PUBLIC        SCON
+  C:11CDH         PUBLIC        _IST3932_DrawChar
+BL51 BANKED LINKER/LOCATER V6.22                                                      12/12/2017  17:05:21  PAGE 6
+
+
+  D:0088H         PUBLIC        TCON
+  C:1B88H         PUBLIC        _IST3932_DrawPixel
+  C:1C58H         PUBLIC        IST3932_Init
+  C:1650H         PUBLIC        _IST3932_FillRect
+  C:1F39H         SYMBOL        IST3932_SoftReset
+  C:1EC3H         SYMBOL        IST3932_Osc
+  C:1F3EH         SYMBOL        IST3932_Nop
+  C:1F19H         SYMBOL        _IST3932_SetBias
+  B:0080H.0       PUBLIC        LCM12864_CS
+  C:1EDDH         SYMBOL        IST3932_SetInterleave
+  C:1F22H         SYMBOL        _IST3932_SetCol
+  C:1BFEH         PUBLIC        IST3932_Refresh
+  C:1DEFH         SYMBOL        _IST3932_SetDuty
+  C:1DA2H         SYMBOL        IST3932_DriverControl
+  D:00D0H         PUBLIC        PSW
+  C:1E30H         SYMBOL        IST3932_BeginIST
+  -------         PROC          _IST3932_SETROW
+  D:0052H         SYMBOL        row
+  C:1E06H         LINE#         38
+  C:1E08H         LINE#         39
+  C:1E10H         LINE#         40
+  -------         ENDPROC       _IST3932_SETROW
+  -------         PROC          IST3932_POWER
+  B:0020H.0       SYMBOL        isOn
+  C:1EA9H         LINE#         46
+  C:1EA9H         LINE#         47
+  C:1EACH         LINE#         48
+  C:1EAEH         LINE#         49
+  C:1EB0H         LINE#         50
+  C:1EB5H         LINE#         51
+  C:1EB5H         LINE#         52
+  -------         ENDPROC       IST3932_POWER
+  -------         PROC          _IST3932_SETBIAS
+  D:0007H         SYMBOL        bias
+  C:1F19H         LINE#         57
+  C:1F19H         LINE#         58
+  -------         ENDPROC       _IST3932_SETBIAS
+  -------         PROC          IST3932_SLEEP
+  B:0020H.4       SYMBOL        isSleep
+  C:1EB6H         LINE#         64
+  C:1EB6H         LINE#         65
+  C:1EB9H         LINE#         66
+  C:1EBDH         LINE#         68
+  C:1EC2H         LINE#         69
+  -------         ENDPROC       IST3932_SLEEP
+  -------         PROC          IST3932_OSC
+  B:0020H.5       SYMBOL        isOff
+  C:1EC3H         LINE#         74
+  C:1EC3H         LINE#         75
+  C:1EC6H         LINE#         76
+  C:1EC8H         LINE#         77
+  C:1ECAH         LINE#         78
+  C:1ECFH         LINE#         79
+  C:1ECFH         LINE#         80
+  -------         ENDPROC       IST3932_OSC
+  -------         PROC          IST3932_DISPLAY
+  B:0020H.0       SYMBOL        isOn
+BL51 BANKED LINKER/LOCATER V6.22                                                      12/12/2017  17:05:21  PAGE 7
+
+
+  C:1ED0H         LINE#         85
+  C:1ED0H         LINE#         86
+  C:1ED3H         LINE#         87
+  C:1ED5H         LINE#         88
+  C:1ED7H         LINE#         89
+  C:1EDCH         LINE#         90
+  C:1EDCH         LINE#         91
+  -------         ENDPROC       IST3932_DISPLAY
+  -------         PROC          _IST3932_SETSTARTINGLINE
+  D:001FH         SYMBOL        line
+  C:1DD8H         LINE#         96
+  C:1DDAH         LINE#         97
+  C:1DE4H         LINE#         98
+  -------         ENDPROC       _IST3932_SETSTARTINGLINE
+  -------         PROC          IST3932_DRIVERCONTROL
+  B:0020H.0       SYMBOL        isVFlip
+  B:0020H.1       SYMBOL        isADC
+  B:0020H.2       SYMBOL        isDisplayAll
+  B:0020H.3       SYMBOL        isNegative
+  -------         DO            
+  D:0007H         SYMBOL        cmd
+  -------         ENDDO         
+  C:1DA2H         LINE#         104
+  C:1DA2H         LINE#         105
+  C:1DA4H         LINE#         106
+  C:1DAAH         LINE#         107
+  C:1DB0H         LINE#         108
+  C:1DB6H         LINE#         109
+  C:1DBCH         LINE#         110
+  -------         ENDPROC       IST3932_DRIVERCONTROL
+  -------         PROC          IST3932_SOFTRESET
+  C:1F39H         LINE#         116
+  C:1F39H         LINE#         117
+  -------         ENDPROC       IST3932_SOFTRESET
+  -------         PROC          _IST3932_SETDUTY
+  D:004FH         SYMBOL        duty
+  C:1DEFH         LINE#         123
+  C:1DF1H         LINE#         124
+  C:1DFBH         LINE#         125
+  -------         ENDPROC       _IST3932_SETDUTY
+  -------         PROC          _IST3932_SETCOL
+  D:0007H         SYMBOL        col
+  C:1F22H         LINE#         131
+  C:1F22H         LINE#         132
+  -------         ENDPROC       _IST3932_SETCOL
+  -------         PROC          _IST3932_SETCONTRAST
+  D:004FH         SYMBOL        contrast
+  C:1EF7H         LINE#         138
+  C:1EF9H         LINE#         139
+  C:1EFEH         LINE#         140
+  -------         ENDPROC       _IST3932_SETCONTRAST
+  -------         PROC          _IST3932_SETFRAMECONTROL
+  D:004FH         SYMBOL        value0
+  D:0050H         SYMBOL        value1
+  C:1E44H         LINE#         146
+  C:1E48H         LINE#         147
+  C:1E4DH         LINE#         148
+BL51 BANKED LINKER/LOCATER V6.22                                                      12/12/2017  17:05:21  PAGE 8
+
+
+  C:1E52H         LINE#         149
+  -------         ENDPROC       _IST3932_SETFRAMECONTROL
+  -------         PROC          IST3932_NOP
+  C:1F3EH         LINE#         155
+  C:1F3EH         LINE#         156
+  -------         ENDPROC       IST3932_NOP
+  -------         PROC          IST3932_BEGINIST
+  C:1E30H         LINE#         162
+  C:1E30H         LINE#         163
+  C:1E35H         LINE#         164
+  C:1E3AH         LINE#         165
+  C:1E3FH         LINE#         166
+  -------         ENDPROC       IST3932_BEGINIST
+  -------         PROC          IST3932_SETINTERLEAVE
+  B:0020H.0       SYMBOL        isInterleave
+  C:1EDDH         LINE#         172
+  C:1EDDH         LINE#         173
+  C:1EE0H         LINE#         174
+  C:1EE2H         LINE#         175
+  C:1EE4H         LINE#         176
+  C:1EE9H         LINE#         177
+  C:1EE9H         LINE#         178
+  -------         ENDPROC       IST3932_SETINTERLEAVE
+  -------         PROC          IST3932_ENDIST
+  C:1F43H         LINE#         183
+  C:1F43H         LINE#         184
+  -------         ENDPROC       IST3932_ENDIST
+  -------         PROC          IST3932_INIT
+  C:1C58H         LINE#         187
+  C:1C58H         LINE#         188
+  C:1C5AH         LINE#         191
+  C:1C61H         LINE#         193
+  C:1C66H         LINE#         195
+  C:1C6BH         LINE#         197
+  C:1C70H         LINE#         199
+  C:1C77H         LINE#         201
+  C:1C7CH         LINE#         203
+  C:1C87H         LINE#         205
+  C:1C8CH         LINE#         207
+  C:1C8FH         LINE#         208
+  C:1C94H         LINE#         209
+  C:1C97H         LINE#         211
+  C:1C99H         LINE#         212
+  -------         ENDPROC       IST3932_INIT
+  -------         PROC          IST3932_REFRESH
+  -------         DO            
+  D:004FH         SYMBOL        x
+  D:0050H         SYMBOL        y
+  -------         DO            
+  D:0051H         SYMBOL        d
+  -------         ENDDO         
+  -------         ENDDO         
+  C:1BFEH         LINE#         214
+  C:1BFEH         LINE#         216
+  C:1C00H         LINE#         220
+  C:1C03H         LINE#         222
+  C:1C08H         LINE#         223
+BL51 BANKED LINKER/LOCATER V6.22                                                      12/12/2017  17:05:21  PAGE 9
+
+
+  C:1C0DH         LINE#         224
+  C:1C10H         LINE#         225
+  C:1C2CH         LINE#         227
+  C:1C3FH         LINE#         233
+  C:1C43H         LINE#         234
+  C:1C4CH         LINE#         235
+  C:1C55H         LINE#         236
+  C:1C57H         LINE#         237
+  -------         ENDPROC       IST3932_REFRESH
+  -------         PROC          _IST3932_DRAWCHAR
+  D:002BH         SYMBOL        fontSize
+  D:002CH         SYMBOL        x
+  D:002DH         SYMBOL        y
+  B:0020H.6       SYMBOL        c
+  -------         DO            
+  D:002EH         SYMBOL        i
+  D:002FH         SYMBOL        page
+  -------         DO            
+  D:0030H         SYMBOL        vramOffset
+  D:0032H         SYMBOL        offsetInPage
+  -------         ENDDO         
+  -------         ENDDO         
+  C:11CDH         LINE#         244
+  C:11D3H         LINE#         247
+  C:11E5H         LINE#         248
+  C:11F1H         LINE#         249
+  C:11FFH         LINE#         253
+  C:120BH         LINE#         255
+  C:1216H         LINE#         257
+  C:1223H         LINE#         259
+  C:123DH         LINE#         264
+  C:124BH         LINE#         267
+  C:1265H         LINE#         269
+  C:126BH         LINE#         271
+  C:1274H         LINE#         272
+  C:127CH         LINE#         274
+  C:127FH         LINE#         275
+  C:12AFH         LINE#         277
+  C:12E3H         LINE#         278
+  C:12E3H         LINE#         279
+  C:12E3H         LINE#         281
+  C:12EBH         LINE#         283
+  C:1315H         LINE#         284
+  C:131EH         LINE#         285
+  C:1321H         LINE#         286
+  C:1359H         LINE#         288
+  C:1395H         LINE#         289
+  C:1395H         LINE#         290
+  C:139DH         LINE#         292
+  C:13C7H         LINE#         293
+  C:13D0H         LINE#         294
+  C:13D3H         LINE#         295
+  C:140BH         LINE#         297
+  C:1447H         LINE#         298
+  C:1447H         LINE#         299
+  C:1447H         LINE#         300
+  C:144CH         LINE#         301
+BL51 BANKED LINKER/LOCATER V6.22                                                      12/12/2017  17:05:21  PAGE 10
+
+
+  -------         ENDPROC       _IST3932_DRAWCHAR
+  -------         PROC          _IST3932_DRAWPIXEL
+  D:0004H         SYMBOL        x
+  D:0005H         SYMBOL        y
+  B:0020H.1       SYMBOL        c
+  C:1B88H         LINE#         306
+  C:1B8AH         LINE#         307
+  C:1B90H         LINE#         311
+  C:1B96H         LINE#         313
+  C:1B99H         LINE#         314
+  C:1BCBH         LINE#         316
+  C:1BFDH         LINE#         317
+  -------         ENDPROC       _IST3932_DRAWPIXEL
+  -------         PROC          _IST3932_FILLRECT
+  D:0001H         SYMBOL        x
+  D:0023H         SYMBOL        y
+  D:0024H         SYMBOL        w
+  D:0025H         SYMBOL        h
+  B:0020H.7       SYMBOL        c
+  -------         DO            
+  D:0005H         SYMBOL        i
+  D:0004H         SYMBOL        j
+  -------         DO            
+  D:0026H         SYMBOL        page0
+  D:0027H         SYMBOL        page1
+  D:0028H         SYMBOL        _x0
+  D:0029H         SYMBOL        _x1
+  -------         DO            
+  D:002AH         SYMBOL        mask
+  -------         ENDDO         
+  -------         ENDDO         
+  -------         ENDDO         
+  C:1650H         LINE#         322
+  C:1656H         LINE#         324
+  C:165FH         LINE#         325
+  C:1676H         LINE#         330
+  C:1680H         LINE#         331
+  C:1699H         LINE#         334
+  C:16A9H         LINE#         335
+  C:16B1H         LINE#         336
+  C:16C5H         LINE#         337
+  C:16CAH         LINE#         338
+  C:16D1H         LINE#         339
+  C:16D7H         LINE#         340
+  C:16D9H         LINE#         341
+  C:16E1H         LINE#         342
+  C:16EEH         LINE#         343
+  C:16F1H         LINE#         344
+  C:1705H         LINE#         345
+  C:1710H         LINE#         346
+  C:1713H         LINE#         347
+  C:1723H         LINE#         348
+  C:1723H         LINE#         349
+  C:1726H         LINE#         350
+  C:1731H         LINE#         351
+  C:1736H         LINE#         352
+  C:1739H         LINE#         353
+BL51 BANKED LINKER/LOCATER V6.22                                                      12/12/2017  17:05:21  PAGE 11
+
+
+  C:1766H         LINE#         355
+  C:178EH         LINE#         356
+  C:1795H         LINE#         357
+  C:1798H         LINE#         358
+  C:17C8H         LINE#         360
+  C:17F7H         LINE#         361
+  C:17F9H         LINE#         362
+  C:180EH         LINE#         363
+  C:181AH         LINE#         365
+  C:1823H         LINE#         366
+  C:1823H         LINE#         367
+  C:1827H         LINE#         368
+  C:1827H         LINE#         369
+  C:182BH         LINE#         370
+  -------         ENDPROC       _IST3932_FILLRECT
+  -------         ENDMOD        IST3932
+
+  -------         MODULE        LCM12864
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  D:0093H         PUBLIC        P0M1
+  D:0080H         PUBLIC        P0
+  D:00A8H         PUBLIC        IE
+  C:1F2BH         PUBLIC        _LCM12864_SendCommand
+  C:1F4DH         PUBLIC        LCM12864_Refresh
+  D:00B8H         PUBLIC        IP
+  B:0080H.7       PUBLIC        LCM12864_LED
+  D:00D8H         PUBLIC        CCON
+  C:1D3AH         SYMBOL        _WinbondFlash_Read
+  C:1A22H         PUBLIC        _LCM12864_DrawCircle
+  C:1E9AH         PUBLIC        LCM12864_Clear
+  D:0098H         PUBLIC        SCON
+  D:0088H         PUBLIC        TCON
+  X:0000H         PUBLIC        VRAM
+  B:0080H.2       PUBLIC        LCM12864_CD
+  C:1F32H         PUBLIC        _LCM12864_SendData
+  C:193CH         PUBLIC        _LCM12864_DrawString
+  C:1F48H         PUBLIC        LCM12864_Backlight
+  C:1D61H         PUBLIC        _LCM12864_DrawChar
+  C:1E75H         PUBLIC        _LCM12864_DrawPixel
+  C:1E8BH         PUBLIC        LCM12864_Init
+  B:0080H.0       PUBLIC        LCM12864_CS
+  C:1F0FH         PUBLIC        _LCM12864_FillRect
+  C:182CH         PUBLIC        _LCM12864_DrawLine
+  C:01A1H         PUBLIC        fontText
+  C:0003H         PUBLIC        textMap
+  C:1C9AH         SYMBOL        _LCM12864_GetOffsetFromChar
+  X:0400H         PUBLIC        tmpBuf
+  D:00D0H         PUBLIC        PSW
+  D:0094H         PUBLIC        P0M0
+  -------         PROC          _LCM12864_SENDCOMMAND
+  D:0007H         SYMBOL        value
+  C:1F2BH         LINE#         28
+  C:1F2BH         LINE#         29
+  C:1F2DH         LINE#         30
+  C:1F2FH         LINE#         31
+  -------         ENDPROC       _LCM12864_SENDCOMMAND
+  -------         PROC          _LCM12864_SENDDATA
+BL51 BANKED LINKER/LOCATER V6.22                                                      12/12/2017  17:05:21  PAGE 12
+
+
+  D:0007H         SYMBOL        value
+  C:1F32H         LINE#         34
+  C:1F32H         LINE#         35
+  C:1F34H         LINE#         36
+  C:1F36H         LINE#         37
+  -------         ENDPROC       _LCM12864_SENDDATA
+  -------         PROC          LCM12864_INIT
+  C:1E8BH         LINE#         40
+  C:1E8BH         LINE#         41
+  C:1E8EH         LINE#         42
+  C:1E91H         LINE#         43
+  C:1E94H         LINE#         44
+  C:1E97H         LINE#         49
+  -------         ENDPROC       LCM12864_INIT
+  -------         PROC          LCM12864_CLEAR
+  C:1E9AH         LINE#         55
+  C:1E9AH         LINE#         56
+  -------         ENDPROC       LCM12864_CLEAR
+  -------         PROC          LCM12864_REFRESH
+  C:1F4DH         LINE#         59
+  C:1F4DH         LINE#         63
+  -------         ENDPROC       LCM12864_REFRESH
+  -------         PROC          LCM12864_BACKLIGHT
+  B:0020H.0       SYMBOL        isOn
+  C:1F48H         LINE#         72
+  C:1F48H         LINE#         73
+  C:1F4CH         LINE#         74
+  -------         ENDPROC       LCM12864_BACKLIGHT
+  -------         PROC          _LCM12864_GETOFFSETFROMCHAR
+  D:0001H         SYMBOL        fontSize
+  D:0004H         SYMBOL        chr
+  -------         DO            
+  D:0007H         SYMBOL        i
+  -------         ENDDO         
+  C:1C9AH         LINE#         79
+  C:1C9CH         LINE#         84
+  C:1C9EH         LINE#         85
+  C:1C9EH         LINE#         86
+  C:1CB8H         LINE#         87
+  C:1CB8H         LINE#         88
+  C:1CBCH         LINE#         89
+  C:1CC2H         LINE#         90
+  C:1CC4H         LINE#         92
+  C:1CD5H         LINE#         93
+  -------         ENDPROC       _LCM12864_GETOFFSETFROMCHAR
+  -------         PROC          _WINBONDFLASH_READ
+  D:0033H         SYMBOL        offset
+  D:0037H         SYMBOL        buf
+  D:003AH         SYMBOL        size
+  C:1D3AH         LINE#         95
+  C:1D48H         LINE#         96
+  -------         ENDPROC       _WINBONDFLASH_READ
+  -------         PROC          _LCM12864_DRAWCHAR
+  D:0042H         SYMBOL        fontSize
+  D:0004H         SYMBOL        chr
+  D:0045H         SYMBOL        x
+  D:0046H         SYMBOL        y
+BL51 BANKED LINKER/LOCATER V6.22                                                      12/12/2017  17:05:21  PAGE 13
+
+
+  B:0021H.0       SYMBOL        c
+  C:1D61H         LINE#         99
+  C:1D65H         LINE#         100
+  C:1D77H         LINE#         104
+  -------         ENDPROC       _LCM12864_DRAWCHAR
+  -------         PROC          _LCM12864_DRAWSTRING
+  D:0008H         SYMBOL        fontSize
+  D:0009H         SYMBOL        str
+  D:000CH         SYMBOL        x
+  D:000EH         SYMBOL        y
+  B:0021H.1       SYMBOL        c
+  -------         DO            
+  D:0010H         SYMBOL        i
+  D:0011H         SYMBOL        len
+  -------         DO            
+  D:0012H         SYMBOL        tmp
+  -------         ENDDO         
+  -------         ENDDO         
+  C:193CH         LINE#         110
+  C:1944H         LINE#         111
+  C:194CH         LINE#         112
+  C:1956H         LINE#         113
+  C:196BH         LINE#         114
+  C:1992H         LINE#         115
+  C:19A6H         LINE#         116
+  C:19A8H         LINE#         117
+  C:19ACH         LINE#         118
+  C:19AEH         LINE#         119
+  C:19C5H         LINE#         120
+  C:19CCH         LINE#         121
+  C:19D9H         LINE#         122
+  C:19FDH         LINE#         123
+  C:1A0FH         LINE#         124
+  C:1A13H         LINE#         125
+  C:1A1EH         LINE#         126
+  C:1A1EH         LINE#         127
+  C:1A21H         LINE#         128
+  -------         ENDPROC       _LCM12864_DRAWSTRING
+  C:1E70H         SYMBOL        L?0053
+  -------         PROC          L?0052
+  -------         ENDPROC       L?0052
+  C:1E70H         SYMBOL        L?0053
+  -------         PROC          _LCM12864_DRAWPIXEL
+  D:0007H         SYMBOL        x
+  D:0005H         SYMBOL        y
+  B:0020H.0       SYMBOL        c
+  C:1E75H         LINE#         133
+  C:1E75H         LINE#         137
+  -------         ENDPROC       _LCM12864_DRAWPIXEL
+  -------         PROC          _LCM12864_DRAWLINE
+  D:0007H         SYMBOL        x0
+  D:0005H         SYMBOL        y0
+  D:0016H         SYMBOL        x1
+  D:0017H         SYMBOL        y1
+  B:0021H.2       SYMBOL        c
+  -------         DO            
+  D:0018H         SYMBOL        dx
+BL51 BANKED LINKER/LOCATER V6.22                                                      12/12/2017  17:05:21  PAGE 14
+
+
+  D:0019H         SYMBOL        dy
+  D:001AH         SYMBOL        ux
+  D:001BH         SYMBOL        uy
+  D:001CH         SYMBOL        x
+  D:001DH         SYMBOL        y
+  D:001EH         SYMBOL        eps
+  -------         ENDDO         
+  C:182CH         LINE#         146
+  C:182EH         LINE#         147
+  C:1834H         LINE#         148
+  C:183AH         LINE#         149
+  C:184FH         LINE#         150
+  C:1864H         LINE#         151
+  C:186BH         LINE#         153
+  C:187FH         LINE#         154
+  C:1893H         LINE#         155
+  C:18A0H         LINE#         156
+  C:18A9H         LINE#         157
+  C:18B4H         LINE#         158
+  C:18BAH         LINE#         159
+  C:18DAH         LINE#         160
+  C:18E0H         LINE#         161
+  C:18E7H         LINE#         162
+  C:18E7H         LINE#         163
+  C:18EFH         LINE#         164
+  C:18EFH         LINE#         165
+  C:18F5H         LINE#         166
+  C:1900H         LINE#         167
+  C:1906H         LINE#         168
+  C:1926H         LINE#         169
+  C:192CH         LINE#         170
+  C:1933H         LINE#         171
+  C:1933H         LINE#         172
+  C:193BH         LINE#         173
+  C:193BH         LINE#         174
+  -------         ENDPROC       _LCM12864_DRAWLINE
+  -------         PROC          _LCM12864_FILLRECT
+  D:0007H         SYMBOL        x
+  D:0005H         SYMBOL        y
+  D:0003H         SYMBOL        w
+  D:004AH         SYMBOL        h
+  B:0021H.3       SYMBOL        c
+  C:1F0FH         LINE#         179
+  C:1F0FH         LINE#         183
+  -------         ENDPROC       _LCM12864_FILLRECT
+  -------         PROC          _LCM12864_DRAWCIRCLE
+  D:003BH         SYMBOL        x1
+  D:003CH         SYMBOL        y1
+  D:0003H         SYMBOL        r
+  B:0021H.4       SYMBOL        c
+  -------         DO            
+  D:003DH         SYMBOL        x
+  D:003FH         SYMBOL        y
+  D:0041H         SYMBOL        d
+  -------         ENDDO         
+  C:1A22H         LINE#         192
+  C:1A26H         LINE#         193
+BL51 BANKED LINKER/LOCATER V6.22                                                      12/12/2017  17:05:21  PAGE 15
+
+
+  C:1A31H         LINE#         194
+  C:1A37H         LINE#         195
+  C:1A4BH         LINE#         196
+  C:1A57H         LINE#         197
+  C:1A63H         LINE#         198
+  C:1A70H         LINE#         199
+  C:1A7DH         LINE#         200
+  C:1A85H         LINE#         201
+  C:1A93H         LINE#         202
+  C:1A9AH         LINE#         203
+  C:1AA7H         LINE#         204
+  C:1AB0H         LINE#         205
+  C:1ABAH         LINE#         206
+  C:1ABCH         LINE#         207
+  C:1AC9H         LINE#         208
+  C:1AD1H         LINE#         209
+  C:1AD1H         LINE#         210
+  C:1ADCH         LINE#         211
+  C:1ADFH         LINE#         212
+  -------         ENDPROC       _LCM12864_DRAWCIRCLE
+  -------         ENDMOD        LCM12864
+
+  -------         MODULE        SPI
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  D:0092H         PUBLIC        P1M0
+  D:0091H         PUBLIC        P1M1
+  D:00CEH         PUBLIC        SPCTL
+  D:00A8H         PUBLIC        IE
+  D:00B8H         PUBLIC        IP
+  D:00D8H         PUBLIC        CCON
+  D:0098H         PUBLIC        SCON
+  D:0088H         PUBLIC        TCON
+  C:1EEAH         PUBLIC        _SPI_SendAndReceive
+  D:00CDH         PUBLIC        SPSTAT
+  C:1E57H         PUBLIC        SPI_Init
+  D:00A2H         PUBLIC        AUXR1
+  D:00D0H         PUBLIC        PSW
+  D:00CFH         PUBLIC        SPDAT
+  -------         PROC          SPI_INIT
+  C:1E57H         LINE#         13
+  C:1E57H         LINE#         20
+  C:1E5AH         LINE#         21
+  C:1E5DH         LINE#         22
+  C:1E60H         LINE#         24
+  C:1E63H         LINE#         25
+  C:1E66H         LINE#         26
+  C:1E69H         LINE#         31
+  -------         ENDPROC       SPI_INIT
+  -------         PROC          _SPI_SENDANDRECEIVE
+  D:0007H         SYMBOL        value
+  C:1EEAH         LINE#         33
+  C:1EEAH         LINE#         35
+  C:1EECH         LINE#         36
+  C:1EF1H         LINE#         37
+  C:1EF4H         LINE#         38
+  C:1EF6H         LINE#         50
+  -------         ENDPROC       _SPI_SENDANDRECEIVE
+BL51 BANKED LINKER/LOCATER V6.22                                                      12/12/2017  17:05:21  PAGE 16
+
+
+  -------         ENDMOD        SPI
+
+  -------         MODULE        UTILITY
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  D:00A8H         PUBLIC        IE
+  D:00B8H         PUBLIC        IP
+  D:00D8H         PUBLIC        CCON
+  D:0098H         PUBLIC        SCON
+  D:0088H         PUBLIC        TCON
+  C:1AE0H         PUBLIC        _Dec2String
+  C:1CD6H         PUBLIC        _Hex2String
+  C:1DBFH         PUBLIC        _Delay
+  D:00D0H         PUBLIC        PSW
+  -------         PROC          _DELAY
+  D:0006H         SYMBOL        ms
+  -------         DO            
+  D:004FH         SYMBOL        i
+  D:0050H         SYMBOL        j
+  -------         ENDDO         
+  C:1DBFH         LINE#         4
+  C:1DBFH         LINE#         5
+  C:1DC9H         LINE#         6
+  C:1DCFH         LINE#         7
+  C:1DCFH         LINE#         8
+  C:1DD2H         LINE#         9
+  C:1DD5H         LINE#         10
+  C:1DD7H         LINE#         11
+  -------         ENDPROC       _DELAY
+  -------         PROC          _DEC2STRING
+  D:004BH         SYMBOL        dec
+  D:004CH         SYMBOL        strBuf
+  -------         DO            
+  D:0003H         SYMBOL        _2
+  D:0007H         SYMBOL        _1
+  D:0006H         SYMBOL        _0
+  -------         ENDDO         
+  C:1AE0H         LINE#         13
+  C:1AE8H         LINE#         14
+  C:1AEFH         LINE#         15
+  C:1B04H         LINE#         16
+  C:1B19H         LINE#         17
+  C:1B1CH         LINE#         18
+  C:1B23H         LINE#         19
+  C:1B32H         LINE#         20
+  C:1B3BH         LINE#         21
+  C:1B42H         LINE#         22
+  C:1B45H         LINE#         23
+  C:1B48H         LINE#         24
+  C:1B53H         LINE#         25
+  C:1B62H         LINE#         26
+  C:1B69H         LINE#         27
+  C:1B6CH         LINE#         28
+  C:1B6CH         LINE#         29
+  C:1B78H         LINE#         30
+  C:1B85H         LINE#         31
+  C:1B87H         LINE#         32
+  C:1B87H         LINE#         33
+BL51 BANKED LINKER/LOCATER V6.22                                                      12/12/2017  17:05:21  PAGE 17
+
+
+  -------         ENDPROC       _DEC2STRING
+  -------         PROC          _HEX2STRING
+  D:0007H         SYMBOL        hex
+  D:0001H         SYMBOL        strBuf
+  -------         DO            
+  D:0006H         SYMBOL        hi
+  D:0007H         SYMBOL        lo
+  -------         ENDDO         
+  C:1CD6H         LINE#         35
+  C:1CD6H         LINE#         36
+  C:1CDBH         LINE#         37
+  C:1CDFH         LINE#         38
+  C:1CF2H         LINE#         39
+  C:1D08H         LINE#         40
+  C:1D0FH         LINE#         41
+  C:1D11H         LINE#         42
+  -------         ENDPROC       _HEX2STRING
+  -------         ENDMOD        UTILITY
+
+  -------         MODULE        ?C?COPY
+  C:151DH         PUBLIC        ?C?COPY
+  -------         ENDMOD        ?C?COPY
+
+  -------         MODULE        ?C?CLDOPTR
+  C:1543H         PUBLIC        ?C?CLDOPTR
+  -------         ENDMOD        ?C?CLDOPTR
+
+  -------         MODULE        ?C?CSTPTR
+  C:1570H         PUBLIC        ?C?CSTPTR
+  -------         ENDMOD        ?C?CSTPTR
+
+  -------         MODULE        ?C?CSTOPTR
+  C:1582H         PUBLIC        ?C?CSTOPTR
+  -------         ENDMOD        ?C?CSTOPTR
+
+  -------         MODULE        ?C?IMUL
+  C:15A4H         PUBLIC        ?C?IMUL
+  -------         ENDMOD        ?C?IMUL
+
+  -------         MODULE        ?C?UIDIV
+  C:15B6H         PUBLIC        ?C?UIDIV
+  -------         ENDMOD        ?C?UIDIV
+
+  -------         MODULE        STRLEN
+  C:1E1BH         PUBLIC        _STRLEN
+  -------         ENDMOD        STRLEN
+
+  -------         MODULE        ?C?MEMSET
+  C:160BH         PUBLIC        ?C?MEMSET
+  -------         ENDMOD        ?C?MEMSET
+
+  -------         MODULE        ?C?CLDPTR
+  C:1637H         PUBLIC        ?C?CLDPTR
+  -------         ENDMOD        ?C?CLDPTR
+
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?IST3932_SLEEP?IST3932
+BL51 BANKED LINKER/LOCATER V6.22                                                      12/12/2017  17:05:21  PAGE 18
+
+
+
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?IST3932_OSC?IST3932
+
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_IST3932_SETSTARTINGLINE?IST3932
+
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?IST3932_SOFTRESET?IST3932
+
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?IST3932_NOP?IST3932
+
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_LCM12864_DRAWSTRING?LCM12864
+
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_LCM12864_DRAWLINE?LCM12864
+
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_LCM12864_FILLRECT?LCM12864
+
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_LCM12864_DRAWCIRCLE?LCM12864
+
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_DEC2STRING?UTILITY
+
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_HEX2STRING?UTILITY
+
+Program Size: data=83.5 xdata=1056 code=8016
+LINK/LOCATE RUN COMPLETE.  11 WARNING(S),  0 ERROR(S)

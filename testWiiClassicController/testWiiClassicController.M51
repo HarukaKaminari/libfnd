@@ -1,0 +1,922 @@
+BL51 BANKED LINKER/LOCATER V6.22                                                        12/12/2017  17:09:05  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V6.22, INVOKED BY:
+C:\KEIL\C51\BIN\BL51.EXE main.obj, .\I2C.obj, .\Uart.obj, .\Utility.obj, .\WiiClassicController.obj TO testWiiClassicCon
+>> troller RAMSIZE (256)
+
+
+MEMORY MODEL: SMALL
+
+
+INPUT MODULES INCLUDED:
+  main.obj (MAIN)
+  .\I2C.obj (I2C)
+  .\Uart.obj (UART)
+  .\Utility.obj (UTILITY)
+  .\WiiClassicController.obj (WIICLASSICCONTROLLER)
+  C:\KEIL\C51\LIB\C51S.LIB (?C_STARTUP)
+  C:\KEIL\C51\LIB\C51S.LIB (?C?CLDPTR)
+  C:\KEIL\C51\LIB\C51S.LIB (?C?CLDOPTR)
+  C:\KEIL\C51\LIB\C51S.LIB (?C?CSTPTR)
+  C:\KEIL\C51\LIB\C51S.LIB (?C?CSTOPTR)
+  C:\KEIL\C51\LIB\C51S.LIB (?C?UIDIV)
+  C:\KEIL\C51\LIB\C51S.LIB (STRLEN)
+  C:\KEIL\C51\LIB\C51S.LIB (?C_INIT)
+
+
+LINK MAP OF MODULE:  testWiiClassicController (MAIN)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+            DATA    0008H     0013H     UNIT         _DATA_GROUP_
+            DATA    001BH     0005H     UNIT         ?DT?_UART_DEC?UART
+            BIT     0020H.0   0000H.1   UNIT         ?BI?CHECKI2CSLAVEVALIDITY?I2C
+            BIT     0020H.1   0000H.1   UNIT         _BIT_GROUP_
+                    0020H.2   0000H.6                *** GAP ***
+            DATA    0021H     000AH     UNIT         ?DT?WIICLASSICCONTROLLER
+            DATA    002BH     0004H     UNIT         ?DT?_DEC2STRING?UTILITY
+            DATA    002FH     0001H     UNIT         ?DT?CHECKI2CSLAVEVALIDITY?I2C
+            IDATA   0030H     0001H     UNIT         ?STACK
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     0003H     ABSOLUTE     
+            CODE    0003H     00D9H     UNIT         ?PR?WIICLASSICCONTROLLER_INIT?WIICLASSICCONTROLLER
+            CODE    00DCH     00CFH     UNIT         ?C?LIB_CODE
+            CODE    01ABH     00B9H     UNIT         ?PR?WIICLASSICCONTROLLER_GETDATA?WIICLASSICCONTROLLER
+            CODE    0264H     00A8H     UNIT         ?PR?_DEC2STRING?UTILITY
+            CODE    030CH     008CH     UNIT         ?C_C51STARTUP
+            CODE    0398H     0084H     UNIT         ?PR?_I2C_GETS?I2C
+            CODE    041CH     0076H     UNIT         ?CO?WIICLASSICCONTROLLER
+            CODE    0492H     0074H     UNIT         ?PR?_I2C_PUTS?I2C
+            CODE    0506H     0049H     UNIT         ?CO?I2C
+            CODE    054FH     0048H     UNIT         ?PR?CHECKI2CSLAVEVALIDITY?I2C
+            CODE    0597H     003CH     UNIT         ?PR?_HEX2STRING?UTILITY
+            CODE    05D3H     002CH     UNIT         ?PR?_UART_STRING?UART
+            CODE    05FFH     0025H     UNIT         ?PR?INIT?MAIN
+            CODE    0624H     0023H     UNIT         ?PR?I2C_READ?I2C
+BL51 BANKED LINKER/LOCATER V6.22                                                      12/12/2017  17:09:05  PAGE 2
+
+
+            CODE    0647H     0023H     UNIT         ?PR?I2C_GETACK?I2C
+            CODE    066AH     0022H     UNIT         ?PR?_UART_DEC?UART
+            CODE    068CH     0022H     UNIT         ?PR?_UART_HEX?UART
+            CODE    06AEH     001FH     UNIT         ?PR?UART_INIT?UART
+            CODE    06CDH     0019H     UNIT         ?PR?_DELAY?UTILITY
+            CODE    06E6H     0018H     UNIT         ?PR?I2C_STOP?I2C
+            CODE    06FEH     0017H     UNIT         ?PR?_I2C_WRITE?I2C
+            CODE    0715H     0017H     UNIT         ?PR?_WIICLASSICCONTROLLER_ISKEYDOWN?WIICLASSICCONTROLLER
+            CODE    072CH     0017H     UNIT         ?PR?_WIICLASSICCONTROLLER_ISKEYUP?WIICLASSICCONTROLLER
+            CODE    0743H     0015H     UNIT         ?PR?_STRLEN?STRLEN
+            CODE    0758H     0011H     UNIT         ?PR?MAIN?MAIN
+            CODE    0769H     0010H     UNIT         ?PR?I2C_INIT?I2C
+            CODE    0779H     000EH     UNIT         ?PR?_UART_GET?UART
+            CODE    0787H     000DH     UNIT         ?PR?I2C_START?I2C
+            CODE    0794H     000CH     UNIT         ?PR?I2C_DELAY?I2C
+            CODE    07A0H     000CH     UNIT         ?PR?I2C_PUTACK?I2C
+            CODE    07ACH     000BH     UNIT         ?PR?_WIICLASSICCONTROLLER_ISKEYHOLD?WIICLASSICCONTROLLER
+            CODE    07B7H     0009H     UNIT         ?PR?WIICLASSICCONTROLLER_READ?WIICLASSICCONTROLLER
+            CODE    07C0H     0008H     UNIT         ?PR?_UART_PUT?UART
+            CODE    07C8H     0008H     UNIT         ?PR?WIICLASSICCONTROLLER_GETRANALOGX?WIICLASSICCONTROLLER
+            CODE    07D0H     0008H     UNIT         ?PR?WIICLASSICCONTROLLER_GETRANALOGY?WIICLASSICCONTROLLER
+            CODE    07D8H     0006H     UNIT         ?PR?WIICLASSICCONTROLLER_GETLANALOGX?WIICLASSICCONTROLLER
+            CODE    07DEH     0006H     UNIT         ?PR?WIICLASSICCONTROLLER_GETLANALOGY?WIICLASSICCONTROLLER
+            CODE    07E4H     0005H     UNIT         ?C_INITSEG
+            CODE    07E9H     0001H     UNIT         ?PR?_DECRYPT?WIICLASSICCONTROLLER
+
+
+
+OVERLAY MAP OF MODULE:   testWiiClassicController (MAIN)
+
+
+SEGMENT                                             BIT_GROUP          DATA_GROUP 
+  +--> CALLED SEGMENT                            START    LENGTH     START    LENGTH
+------------------------------------------------------------------------------------
+?C_C51STARTUP                                    -----    -----      -----    -----
+  +--> ?PR?MAIN?MAIN
+  +--> ?C_INITSEG
+
+?PR?MAIN?MAIN                                    -----    -----      -----    -----
+  +--> ?PR?INIT?MAIN
+  +--> ?PR?UART_INIT?UART
+  +--> ?PR?I2C_INIT?I2C
+  +--> ?PR?WIICLASSICCONTROLLER_INIT?WIICLAS...
+  +--> ?PR?WIICLASSICCONTROLLER_READ?WIICLAS...
+
+?PR?I2C_INIT?I2C                                 -----    -----      -----    -----
+  +--> ?PR?I2C_DELAY?I2C
+
+?PR?WIICLASSICCONTROLLER_INIT?WIICLAS...         -----    -----      0008H    0007H
+  +--> ?CO?WIICLASSICCONTROLLER
+  +--> ?PR?_UART_STRING?UART
+  +--> ?PR?_I2C_PUTS?I2C
+  +--> ?PR?_DELAY?UTILITY
+  +--> ?PR?_I2C_GETS?I2C
+  +--> ?PR?_UART_HEX?UART
+
+?PR?_UART_STRING?UART                            -----    -----      000FH    0004H
+BL51 BANKED LINKER/LOCATER V6.22                                                      12/12/2017  17:09:05  PAGE 3
+
+
+  +--> ?PR?_STRLEN?STRLEN
+  +--> ?PR?_UART_PUT?UART
+
+?PR?_I2C_PUTS?I2C                                -----    -----      000FH    000CH
+  +--> ?PR?I2C_START?I2C
+  +--> ?PR?I2C_GETACK?I2C
+  +--> ?PR?I2C_STOP?I2C
+
+?PR?I2C_START?I2C                                -----    -----      -----    -----
+  +--> ?PR?I2C_DELAY?I2C
+
+?PR?I2C_GETACK?I2C                               -----    -----      -----    -----
+  +--> ?PR?_I2C_WRITE?I2C
+  +--> ?PR?I2C_DELAY?I2C
+
+?PR?_I2C_WRITE?I2C                               -----    -----      -----    -----
+  +--> ?PR?I2C_DELAY?I2C
+
+?PR?I2C_STOP?I2C                                 -----    -----      -----    -----
+  +--> ?PR?I2C_DELAY?I2C
+
+?PR?_DELAY?UTILITY                               -----    -----      000FH    0002H
+
+?PR?_I2C_GETS?I2C                                -----    -----      000FH    000CH
+  +--> ?PR?I2C_START?I2C
+  +--> ?PR?I2C_GETACK?I2C
+  +--> ?PR?I2C_STOP?I2C
+  +--> ?PR?I2C_READ?I2C
+  +--> ?PR?I2C_PUTACK?I2C
+
+?PR?I2C_READ?I2C                                 -----    -----      -----    -----
+  +--> ?PR?I2C_DELAY?I2C
+
+?PR?I2C_PUTACK?I2C                               0020H.1  0000H.1    -----    -----
+  +--> ?PR?I2C_DELAY?I2C
+
+?PR?_UART_HEX?UART                               -----    -----      000FH    0004H
+  +--> ?PR?_HEX2STRING?UTILITY
+  +--> ?PR?_UART_PUT?UART
+
+?PR?WIICLASSICCONTROLLER_READ?WIICLAS...         -----    -----      -----    -----
+  +--> ?PR?WIICLASSICCONTROLLER_GETDATA?WIIC...
+
+?PR?WIICLASSICCONTROLLER_GETDATA?WIIC...         -----    -----      0008H    0006H
+  +--> ?PR?_I2C_PUTS?I2C
+  +--> ?PR?_DELAY?UTILITY
+  +--> ?PR?_I2C_GETS?I2C
+  +--> ?PR?_DECRYPT?WIICLASSICCONTROLLER
+
+
+
+SYMBOL TABLE OF MODULE:  testWiiClassicController (MAIN)
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+  -------         MODULE        MAIN
+BL51 BANKED LINKER/LOCATER V6.22                                                      12/12/2017  17:09:05  PAGE 4
+
+
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  D:0092H         PUBLIC        P1M0
+  D:0093H         PUBLIC        P0M1
+  D:0096H         PUBLIC        P2M0
+  D:0091H         PUBLIC        P1M1
+  D:0080H         PUBLIC        P0
+  D:00B2H         PUBLIC        P3M0
+  D:0095H         PUBLIC        P2M1
+  D:0090H         PUBLIC        P1
+  D:00B4H         PUBLIC        P4M0
+  D:00B1H         PUBLIC        P3M1
+  D:00A0H         PUBLIC        P2
+  D:00B3H         PUBLIC        P4M1
+  D:00B0H         PUBLIC        P3
+  D:00C0H         PUBLIC        P4
+  D:00C8H         PUBLIC        P5
+  D:00A8H         PUBLIC        IE
+  C:05FFH         SYMBOL        Init
+  D:00B8H         PUBLIC        IP
+  D:00D8H         PUBLIC        CCON
+  C:0758H         PUBLIC        main
+  D:0098H         PUBLIC        SCON
+  D:0088H         PUBLIC        TCON
+  D:00D0H         PUBLIC        PSW
+  D:0094H         PUBLIC        P0M0
+  -------         PROC          INIT
+  C:05FFH         LINE#         8
+  C:05FFH         LINE#         9
+  C:0602H         LINE#         10
+  C:0604H         LINE#         11
+  C:0606H         LINE#         12
+  C:0608H         LINE#         13
+  C:060AH         LINE#         14
+  C:060CH         LINE#         15
+  C:060EH         LINE#         16
+  C:0610H         LINE#         17
+  C:0612H         LINE#         18
+  C:0614H         LINE#         19
+  C:0617H         LINE#         20
+  C:061AH         LINE#         21
+  C:061DH         LINE#         22
+  C:0620H         LINE#         23
+  C:0623H         LINE#         24
+  -------         ENDPROC       INIT
+  -------         PROC          MAIN
+  C:0758H         LINE#         26
+  C:0758H         LINE#         27
+  C:075BH         LINE#         28
+  C:075EH         LINE#         29
+  C:0761H         LINE#         30
+  C:0764H         LINE#         32
+  C:0764H         LINE#         33
+  C:0767H         LINE#         35
+  -------         ENDPROC       MAIN
+  -------         ENDMOD        MAIN
+
+  -------         MODULE        I2C
+BL51 BANKED LINKER/LOCATER V6.22                                                      12/12/2017  17:09:05  PAGE 5
+
+
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  D:0093H         PUBLIC        P0M1
+  D:0080H         PUBLIC        P0
+  D:0090H         PUBLIC        P1
+  B:0080H.1       PUBLIC        I2C_SCL
+  D:00A0H         PUBLIC        P2
+  D:00B0H         PUBLIC        P3
+  D:00C0H         PUBLIC        P4
+  D:00C8H         PUBLIC        P5
+  D:00A8H         PUBLIC        IE
+  C:079BH         SYMBOL        I2C_Delay
+  D:00B8H         PUBLIC        IP
+  C:0624H         PUBLIC        I2C_Read
+  D:00D8H         PUBLIC        CCON
+  C:06FEH         PUBLIC        _I2C_Write
+  C:0787H         PUBLIC        I2C_Start
+  C:0398H         PUBLIC        _I2C_Gets
+  D:0098H         PUBLIC        SCON
+  C:0769H         PUBLIC        I2C_Init
+  D:0088H         PUBLIC        TCON
+  C:06E6H         PUBLIC        I2C_Stop
+  C:0492H         PUBLIC        _I2C_Puts
+  C:064EH         PUBLIC        I2C_GetAck
+  C:07A0H         PUBLIC        I2C_PutAck
+  C:054FH         PUBLIC        CheckI2CSlaveValidity
+  B:0080H.0       PUBLIC        I2C_SDA
+  D:00D0H         PUBLIC        PSW
+  D:0094H         PUBLIC        P0M0
+  C:0796H         SYMBOL        L?0069
+  -------         PROC          L?0068
+  -------         ENDPROC       L?0068
+  C:0796H         SYMBOL        L?0069
+  -------         PROC          I2C_DELAY
+  -------         DO            
+  D:0007H         SYMBOL        I2C_Delay_t
+  -------         ENDDO         
+  C:079BH         LINE#         51
+  C:079BH         LINE#         52
+  C:079DH         LINE#         53
+  C:079FH         LINE#         54
+  -------         ENDPROC       I2C_DELAY
+  -------         PROC          I2C_INIT
+  C:0769H         LINE#         61
+  C:0769H         LINE#         62
+  C:076CH         LINE#         63
+  C:076FH         LINE#         65
+  C:0771H         LINE#         66
+  C:0774H         LINE#         67
+  C:0776H         LINE#         68
+  -------         ENDPROC       I2C_INIT
+  -------         PROC          I2C_START
+  C:0787H         LINE#         80
+  C:0787H         LINE#         81
+  C:0787H         LINE#         82
+  C:0787H         LINE#         83
+  C:0787H         LINE#         84
+  C:078AH         LINE#         85
+BL51 BANKED LINKER/LOCATER V6.22                                                      12/12/2017  17:09:05  PAGE 6
+
+
+  C:078CH         LINE#         86
+  C:078FH         LINE#         87
+  C:0791H         LINE#         88
+  -------         ENDPROC       I2C_START
+  -------         PROC          _I2C_WRITE
+  D:0006H         SYMBOL        dat
+  -------         DO            
+  D:0005H         SYMBOL        t
+  -------         ENDDO         
+  C:06FEH         LINE#         97
+  C:0700H         LINE#         98
+  C:0702H         LINE#         99
+  C:0702H         LINE#         100
+  C:0706H         LINE#         101
+  C:0706H         LINE#         102
+  C:0706H         LINE#         103
+  C:0709H         LINE#         104
+  C:070BH         LINE#         105
+  C:070EH         LINE#         106
+  C:0712H         LINE#         107
+  C:0714H         LINE#         108
+  -------         ENDPROC       _I2C_WRITE
+  -------         PROC          I2C_READ
+  -------         DO            
+  D:0006H         SYMBOL        dat
+  D:0005H         SYMBOL        t
+  -------         ENDDO         
+  C:0624H         LINE#         115
+  C:0624H         LINE#         117
+  C:0626H         LINE#         118
+  C:0628H         LINE#         119
+  C:062BH         LINE#         120
+  C:062BH         LINE#         121
+  C:062DH         LINE#         122
+  C:0630H         LINE#         123
+  C:0633H         LINE#         124
+  C:0637H         LINE#         125
+  C:063DH         LINE#         126
+  C:063FH         LINE#         127
+  C:0642H         LINE#         128
+  C:0644H         LINE#         129
+  C:0646H         LINE#         130
+  -------         ENDPROC       I2C_READ
+  C:064AH         SYMBOL        L?0071
+  -------         PROC          L?0070
+  -------         ENDPROC       L?0070
+  C:064AH         SYMBOL        L?0071
+  -------         PROC          I2C_GETACK
+  -------         DO            
+  D:0004H         SYMBOL        timeout
+  -------         ENDDO         
+  C:064EH         LINE#         143
+  C:064EH         LINE#         144
+  C:0652H         LINE#         145
+  C:0652H         LINE#         146
+  C:0652H         LINE#         147
+  C:0652H         LINE#         148
+BL51 BANKED LINKER/LOCATER V6.22                                                      12/12/2017  17:09:05  PAGE 7
+
+
+  C:0655H         LINE#         149
+  C:0658H         LINE#         150
+  C:065DH         LINE#         151
+  C:0661H         LINE#         153
+  C:0663H         LINE#         154
+  C:0663H         LINE#         155
+  C:0663H         LINE#         156
+  C:0665H         LINE#         157
+  C:0668H         LINE#         158
+  C:0669H         LINE#         159
+  -------         ENDPROC       I2C_GETACK
+  -------         PROC          I2C_PUTACK
+  B:0020H.1       SYMBOL        ack
+  C:07A0H         LINE#         171
+  C:07A0H         LINE#         172
+  C:07A4H         LINE#         173
+  C:07A4H         LINE#         174
+  C:07A4H         LINE#         175
+  C:07A7H         LINE#         176
+  C:07A9H         LINE#         177
+  -------         ENDPROC       I2C_PUTACK
+  -------         PROC          I2C_STOP
+  -------         DO            
+  D:0004H         SYMBOL        t
+  -------         ENDDO         
+  C:06E6H         LINE#         188
+  C:06E6H         LINE#         189
+  C:06EAH         LINE#         190
+  C:06ECH         LINE#         191
+  C:06ECH         LINE#         192
+  C:06ECH         LINE#         193
+  C:06EFH         LINE#         194
+  C:06F1H         LINE#         195
+  C:06F4H         LINE#         196
+  C:06FDH         LINE#         197
+  -------         ENDPROC       I2C_STOP
+  -------         PROC          CHECKI2CSLAVEVALIDITY
+  -------         DO            
+  D:002FH         SYMBOL        i
+  -------         DO            
+  B:0020H.0       SYMBOL        result
+  -------         ENDDO         
+  -------         ENDDO         
+  C:054FH         LINE#         205
+  C:054FH         LINE#         206
+  C:0552H         LINE#         207
+  C:055BH         LINE#         208
+  C:055EH         LINE#         209
+  C:055EH         LINE#         211
+  C:0561H         LINE#         212
+  C:0566H         LINE#         213
+  C:056BH         LINE#         214
+  C:056EH         LINE#         215
+  C:0577H         LINE#         216
+  C:057CH         LINE#         217
+  C:0585H         LINE#         218
+  C:0585H         LINE#         219
+BL51 BANKED LINKER/LOCATER V6.22                                                      12/12/2017  17:09:05  PAGE 8
+
+
+  C:0588H         LINE#         220
+  C:058AH         LINE#         221
+  C:058EH         LINE#         223
+  -------         ENDPROC       CHECKI2CSLAVEVALIDITY
+  -------         PROC          _I2C_PUTS
+  D:0007H         SYMBOL        SlaveAddr
+  D:0004H         SYMBOL        SubAddr
+  D:0003H         SYMBOL        SubMod
+  D:0013H         SYMBOL        dat
+  D:0016H         SYMBOL        Size
+  -------         DO            
+  D:0002H         SYMBOL        i
+  D:0018H         SYMBOL        a
+  -------         ENDDO         
+  C:0492H         LINE#         243
+  C:0492H         LINE#         248
+  C:049AH         LINE#         250
+  C:049FH         LINE#         252
+  C:04A7H         LINE#         254
+  C:04AFH         LINE#         255
+  C:04AFH         LINE#         256
+  C:04AFH         LINE#         257
+  C:04AFH         LINE#         258
+  C:04B2H         LINE#         259
+  C:04B4H         LINE#         260
+  C:04B4H         LINE#         261
+  C:04B7H         LINE#         262
+  C:04BAH         LINE#         263
+  C:04BAH         LINE#         264
+  C:04BAH         LINE#         265
+  C:04BAH         LINE#         266
+  C:04BAH         LINE#         268
+  C:04BBH         LINE#         269
+  C:04BEH         LINE#         270
+  C:04C5H         LINE#         271
+  C:04C7H         LINE#         272
+  C:04CCH         LINE#         273
+  C:04CFH         LINE#         274
+  C:04D2H         LINE#         275
+  C:04D2H         LINE#         276
+  C:04D5H         LINE#         278
+  C:04D5H         LINE#         279
+  C:04E6H         LINE#         280
+  C:04EBH         LINE#         281
+  C:04F8H         LINE#         283
+  C:04FBH         LINE#         284
+  C:0501H         LINE#         285
+  C:0503H         LINE#         286
+  C:0503H         LINE#         287
+  C:0505H         LINE#         288
+  C:0505H         LINE#         289
+  -------         ENDPROC       _I2C_PUTS
+  -------         PROC          _I2C_GETS
+  D:0007H         SYMBOL        SlaveAddr
+  D:0004H         SYMBOL        SubAddr
+  D:0003H         SYMBOL        SubMod
+  D:0013H         SYMBOL        dat
+BL51 BANKED LINKER/LOCATER V6.22                                                      12/12/2017  17:09:05  PAGE 9
+
+
+  D:0016H         SYMBOL        Size
+  -------         DO            
+  D:0002H         SYMBOL        i
+  D:0018H         SYMBOL        a
+  -------         ENDDO         
+  C:0398H         LINE#         307
+  C:0398H         LINE#         312
+  C:03A0H         LINE#         314
+  C:03A5H         LINE#         316
+  C:03ADH         LINE#         318
+  C:03B0H         LINE#         320
+  C:03B3H         LINE#         321
+  C:03B6H         LINE#         322
+  C:03B8H         LINE#         323
+  C:03BBH         LINE#         324
+  C:03BEH         LINE#         325
+  C:03BEH         LINE#         327
+  C:03BFH         LINE#         328
+  C:03C2H         LINE#         329
+  C:03C9H         LINE#         330
+  C:03CBH         LINE#         331
+  C:03D0H         LINE#         332
+  C:03D0H         LINE#         333
+  C:03D2H         LINE#         334
+  C:03D2H         LINE#         335
+  C:03D5H         LINE#         336
+  C:03D5H         LINE#         339
+  C:03D8H         LINE#         341
+  C:03DBH         LINE#         342
+  C:03E0H         LINE#         343
+  C:03E3H         LINE#         344
+  C:03E6H         LINE#         345
+  C:03E6H         LINE#         347
+  C:03E6H         LINE#         348
+  C:03FBH         LINE#         349
+  C:0408H         LINE#         350
+  C:040DH         LINE#         351
+  C:040FH         LINE#         352
+  C:040FH         LINE#         353
+  C:0414H         LINE#         354
+  C:0416H         LINE#         356
+  C:0419H         LINE#         357
+  C:041BH         LINE#         358
+  -------         ENDPROC       _I2C_GETS
+  -------         ENDMOD        I2C
+
+  -------         MODULE        UART
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  C:066AH         PUBLIC        _Uart_Dec
+  D:00A8H         PUBLIC        IE
+  C:06AEH         PUBLIC        Uart_Init
+  D:00B8H         PUBLIC        IP
+  B:0098H.0       PUBLIC        RI
+  B:0098H.1       PUBLIC        TI
+  C:0779H         PUBLIC        _Uart_Get
+  D:00D8H         PUBLIC        CCON
+  C:068CH         PUBLIC        _Uart_Hex
+BL51 BANKED LINKER/LOCATER V6.22                                                      12/12/2017  17:09:05  PAGE 10
+
+
+  D:0099H         PUBLIC        SBUF
+  D:0087H         PUBLIC        PCON
+  D:0098H         PUBLIC        SCON
+  D:0089H         PUBLIC        TMOD
+  D:0088H         PUBLIC        TCON
+  C:07C0H         PUBLIC        _Uart_Put
+  D:008EH         PUBLIC        AUXR
+  B:00A8H.3       PUBLIC        ET1
+  D:008DH         PUBLIC        TH1
+  D:008BH         PUBLIC        TL1
+  B:0088H.6       PUBLIC        TR1
+  C:05D3H         PUBLIC        _Uart_String
+  D:00D0H         PUBLIC        PSW
+  -------         PROC          UART_INIT
+  C:06AEH         LINE#         5
+  C:06AEH         LINE#         6
+  C:06B1H         LINE#         7
+  C:06B4H         LINE#         8
+  C:06B7H         LINE#         9
+  C:06BAH         LINE#         10
+  C:06BDH         LINE#         11
+  C:06C0H         LINE#         12
+  C:06C3H         LINE#         13
+  C:06C6H         LINE#         14
+  C:06C8H         LINE#         15
+  C:06CAH         LINE#         16
+  C:06CCH         LINE#         17
+  -------         ENDPROC       UART_INIT
+  -------         PROC          _UART_PUT
+  D:0007H         SYMBOL        value
+  C:07C0H         LINE#         19
+  C:07C0H         LINE#         20
+  C:07C2H         LINE#         21
+  C:07C5H         LINE#         22
+  C:07C7H         LINE#         23
+  -------         ENDPROC       _UART_PUT
+  -------         PROC          _UART_GET
+  D:0001H         SYMBOL        value
+  C:0779H         LINE#         25
+  C:0779H         LINE#         26
+  C:077CH         LINE#         27
+  C:0781H         LINE#         28
+  C:0783H         LINE#         29
+  C:0785H         LINE#         30
+  C:0785H         LINE#         31
+  C:0786H         LINE#         32
+  -------         ENDPROC       _UART_GET
+  -------         PROC          _UART_STRING
+  D:000FH         SYMBOL        str
+  -------         DO            
+  D:0012H         SYMBOL        i
+  D:0006H         SYMBOL        len
+  -------         ENDDO         
+  C:05D3H         LINE#         42
+  C:05D9H         LINE#         43
+  C:05E1H         LINE#         44
+  C:05FEH         LINE#         45
+BL51 BANKED LINKER/LOCATER V6.22                                                      12/12/2017  17:09:05  PAGE 11
+
+
+  -------         ENDPROC       _UART_STRING
+  -------         PROC          _UART_DEC
+  D:0007H         SYMBOL        val
+  -------         DO            
+  D:001BH         SYMBOL        i
+  D:001CH         SYMBOL        strBuf
+  D:0006H         SYMBOL        len
+  -------         ENDDO         
+  C:066AH         LINE#         47
+  C:066AH         LINE#         48
+  C:066DH         LINE#         50
+  C:0677H         LINE#         51
+  C:067DH         LINE#         52
+  C:0687H         LINE#         53
+  C:068BH         LINE#         54
+  -------         ENDPROC       _UART_DEC
+  -------         PROC          _UART_HEX
+  D:0007H         SYMBOL        val
+  -------         DO            
+  D:000FH         SYMBOL        i
+  D:0010H         SYMBOL        strBuf
+  D:0006H         SYMBOL        len
+  -------         ENDDO         
+  C:068CH         LINE#         56
+  C:068CH         LINE#         57
+  C:068FH         LINE#         59
+  C:0699H         LINE#         60
+  C:069FH         LINE#         61
+  C:06A9H         LINE#         62
+  C:06ADH         LINE#         63
+  -------         ENDPROC       _UART_HEX
+  -------         ENDMOD        UART
+
+  -------         MODULE        UTILITY
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  D:00A8H         PUBLIC        IE
+  D:00B8H         PUBLIC        IP
+  D:00D8H         PUBLIC        CCON
+  D:0098H         PUBLIC        SCON
+  D:0088H         PUBLIC        TCON
+  C:0264H         PUBLIC        _Dec2String
+  C:0597H         PUBLIC        _Hex2String
+  C:06CDH         PUBLIC        _Delay
+  D:00D0H         PUBLIC        PSW
+  -------         PROC          _DELAY
+  D:0006H         SYMBOL        ms
+  -------         DO            
+  D:000FH         SYMBOL        i
+  D:0010H         SYMBOL        j
+  -------         ENDDO         
+  C:06CDH         LINE#         4
+  C:06CDH         LINE#         5
+  C:06D7H         LINE#         6
+  C:06DDH         LINE#         7
+  C:06DDH         LINE#         8
+  C:06E0H         LINE#         9
+  C:06E3H         LINE#         10
+BL51 BANKED LINKER/LOCATER V6.22                                                      12/12/2017  17:09:05  PAGE 12
+
+
+  C:06E5H         LINE#         11
+  -------         ENDPROC       _DELAY
+  -------         PROC          _DEC2STRING
+  D:002BH         SYMBOL        dec
+  D:002CH         SYMBOL        strBuf
+  -------         DO            
+  D:0003H         SYMBOL        _2
+  D:0007H         SYMBOL        _1
+  D:0006H         SYMBOL        _0
+  -------         ENDDO         
+  C:0264H         LINE#         13
+  C:026CH         LINE#         14
+  C:0273H         LINE#         15
+  C:0288H         LINE#         16
+  C:029DH         LINE#         17
+  C:02A0H         LINE#         18
+  C:02A7H         LINE#         19
+  C:02B6H         LINE#         20
+  C:02BFH         LINE#         21
+  C:02C6H         LINE#         22
+  C:02C9H         LINE#         23
+  C:02CCH         LINE#         24
+  C:02D7H         LINE#         25
+  C:02E6H         LINE#         26
+  C:02EDH         LINE#         27
+  C:02F0H         LINE#         28
+  C:02F0H         LINE#         29
+  C:02FCH         LINE#         30
+  C:0309H         LINE#         31
+  C:030BH         LINE#         32
+  C:030BH         LINE#         33
+  -------         ENDPROC       _DEC2STRING
+  -------         PROC          _HEX2STRING
+  D:0007H         SYMBOL        hex
+  D:0001H         SYMBOL        strBuf
+  -------         DO            
+  D:0006H         SYMBOL        hi
+  D:0007H         SYMBOL        lo
+  -------         ENDDO         
+  C:0597H         LINE#         35
+  C:0597H         LINE#         36
+  C:059CH         LINE#         37
+  C:05A0H         LINE#         38
+  C:05B3H         LINE#         39
+  C:05C9H         LINE#         40
+  C:05D0H         LINE#         41
+  C:05D2H         LINE#         42
+  -------         ENDPROC       _HEX2STRING
+  -------         ENDMOD        UTILITY
+
+  -------         MODULE        WIICLASSICCONTROLLER
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  D:0080H         PUBLIC        P0
+  D:0090H         PUBLIC        P1
+  C:0715H         PUBLIC        _WiiClassicController_IsKeyDown
+  D:00A0H         PUBLIC        P2
+  D:00B0H         PUBLIC        P3
+BL51 BANKED LINKER/LOCATER V6.22                                                      12/12/2017  17:09:05  PAGE 13
+
+
+  D:00C0H         PUBLIC        P4
+  D:00C8H         PUBLIC        P5
+  D:00A8H         PUBLIC        IE
+  C:0003H         PUBLIC        WiiClassicController_Init
+  D:00B8H         PUBLIC        IP
+  C:07D8H         PUBLIC        WiiClassicController_GetLAnalogX
+  C:01ABH         SYMBOL        WiiClassicController_GetData
+  C:07DEH         PUBLIC        WiiClassicController_GetLAnalogY
+  C:07C8H         PUBLIC        WiiClassicController_GetRAnalogX
+  C:07D0H         PUBLIC        WiiClassicController_GetRAnalogY
+  D:00D8H         PUBLIC        CCON
+  C:072CH         PUBLIC        _WiiClassicController_IsKeyUp
+  D:0021H         SYMBOL        prevButtons
+  D:0098H         PUBLIC        SCON
+  D:0088H         PUBLIC        TCON
+  C:07E9H         SYMBOL        _Decrypt
+  C:07ACH         PUBLIC        _WiiClassicController_IsKeyHold
+  D:0023H         SYMBOL        wiiControllerData
+  D:00D0H         PUBLIC        PSW
+  C:07B7H         PUBLIC        WiiClassicController_Read
+  -------         PROC          _DECRYPT
+  D:0007H         SYMBOL        x
+  C:07E9H         LINE#         28
+  C:07E9H         LINE#         29
+  C:07E9H         LINE#         31
+  -------         ENDPROC       _DECRYPT
+  -------         PROC          WIICLASSICCONTROLLER_INIT
+  -------         DO            
+  D:0007H         SYMBOL        result
+  D:0008H         SYMBOL        buf
+  D:000EH         SYMBOL        i
+  -------         ENDDO         
+  C:0003H         LINE#         33
+  C:0003H         LINE#         38
+  C:000CH         LINE#         40
+  C:000FH         LINE#         41
+  C:0012H         LINE#         42
+  C:002AH         LINE#         43
+  C:002DH         LINE#         45
+  C:0034H         LINE#         47
+  C:0037H         LINE#         48
+  C:003AH         LINE#         49
+  C:004FH         LINE#         50
+  C:0052H         LINE#         52
+  C:0059H         LINE#         54
+  C:0062H         LINE#         56
+  C:0065H         LINE#         57
+  C:007DH         LINE#         58
+  C:0080H         LINE#         60
+  C:0098H         LINE#         61
+  C:009BH         LINE#         63
+  C:00A4H         LINE#         64
+  C:00A7H         LINE#         65
+  C:00B1H         LINE#         66
+  C:00BAH         LINE#         67
+  C:00C3H         LINE#         68
+  C:00CCH         LINE#         70
+BL51 BANKED LINKER/LOCATER V6.22                                                      12/12/2017  17:09:05  PAGE 14
+
+
+  C:00D3H         LINE#         72
+  -------         ENDPROC       WIICLASSICCONTROLLER_INIT
+  -------         PROC          WIICLASSICCONTROLLER_GETDATA
+  -------         DO            
+  D:0008H         SYMBOL        buf
+  D:0007H         SYMBOL        result
+  D:0006H         SYMBOL        i
+  -------         ENDDO         
+  C:01ABH         LINE#         75
+  C:01ABH         LINE#         80
+  C:01AEH         LINE#         81
+  C:01C3H         LINE#         82
+  C:01C6H         LINE#         84
+  C:01CCH         LINE#         86
+  C:01E4H         LINE#         87
+  C:01E7H         LINE#         89
+  C:01FCH         LINE#         91
+  C:0202H         LINE#         92
+  C:0208H         LINE#         94
+  C:0216H         LINE#         95
+  C:0221H         LINE#         96
+  C:022BH         LINE#         98
+  C:0231H         LINE#         100
+  C:023EH         LINE#         101
+  C:0246H         LINE#         103
+  C:024CH         LINE#         105
+  C:0252H         LINE#         106
+  C:0259H         LINE#         107
+  C:025DH         LINE#         108
+  C:0263H         LINE#         109
+  -------         ENDPROC       WIICLASSICCONTROLLER_GETDATA
+  -------         PROC          WIICLASSICCONTROLLER_READ
+  C:07B7H         LINE#         111
+  C:07B7H         LINE#         112
+  C:07BDH         LINE#         113
+  -------         ENDPROC       WIICLASSICCONTROLLER_READ
+  -------         PROC          _WIICLASSICCONTROLLER_ISKEYDOWN
+  D:0006H         SYMBOL        key
+  C:0715H         LINE#         116
+  C:0715H         LINE#         117
+  C:072BH         LINE#         118
+  -------         ENDPROC       _WIICLASSICCONTROLLER_ISKEYDOWN
+  -------         PROC          _WIICLASSICCONTROLLER_ISKEYHOLD
+  D:0006H         SYMBOL        key
+  C:07ACH         LINE#         120
+  C:07ACH         LINE#         121
+  C:07B6H         LINE#         122
+  -------         ENDPROC       _WIICLASSICCONTROLLER_ISKEYHOLD
+  -------         PROC          _WIICLASSICCONTROLLER_ISKEYUP
+  D:0006H         SYMBOL        key
+  C:072CH         LINE#         124
+  C:072CH         LINE#         125
+  C:0742H         LINE#         126
+  -------         ENDPROC       _WIICLASSICCONTROLLER_ISKEYUP
+  -------         PROC          WIICLASSICCONTROLLER_GETLANALOGX
+  C:07D8H         LINE#         128
+  C:07D8H         LINE#         129
+BL51 BANKED LINKER/LOCATER V6.22                                                      12/12/2017  17:09:05  PAGE 15
+
+
+  C:07DDH         LINE#         130
+  -------         ENDPROC       WIICLASSICCONTROLLER_GETLANALOGX
+  -------         PROC          WIICLASSICCONTROLLER_GETLANALOGY
+  C:07DEH         LINE#         132
+  C:07DEH         LINE#         133
+  C:07E3H         LINE#         134
+  -------         ENDPROC       WIICLASSICCONTROLLER_GETLANALOGY
+  -------         PROC          WIICLASSICCONTROLLER_GETRANALOGX
+  C:07C8H         LINE#         136
+  C:07C8H         LINE#         137
+  C:07CFH         LINE#         138
+  -------         ENDPROC       WIICLASSICCONTROLLER_GETRANALOGX
+  -------         PROC          WIICLASSICCONTROLLER_GETRANALOGY
+  C:07D0H         LINE#         140
+  C:07D0H         LINE#         141
+  C:07D7H         LINE#         142
+  -------         ENDPROC       WIICLASSICCONTROLLER_GETRANALOGY
+  -------         ENDMOD        WIICLASSICCONTROLLER
+
+  -------         MODULE        ?C?CLDPTR
+  C:00DCH         PUBLIC        ?C?CLDPTR
+  -------         ENDMOD        ?C?CLDPTR
+
+  -------         MODULE        ?C?CLDOPTR
+  C:00F5H         PUBLIC        ?C?CLDOPTR
+  -------         ENDMOD        ?C?CLDOPTR
+
+  -------         MODULE        ?C?CSTPTR
+  C:0122H         PUBLIC        ?C?CSTPTR
+  -------         ENDMOD        ?C?CSTPTR
+
+  -------         MODULE        ?C?CSTOPTR
+  C:0134H         PUBLIC        ?C?CSTOPTR
+  -------         ENDMOD        ?C?CSTOPTR
+
+  -------         MODULE        ?C?UIDIV
+  C:0156H         PUBLIC        ?C?UIDIV
+  -------         ENDMOD        ?C?UIDIV
+
+  -------         MODULE        STRLEN
+  C:0743H         PUBLIC        _STRLEN
+  -------         ENDMOD        STRLEN
+
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?CHECKI2CSLAVEVALIDITY?I2C
+
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_UART_GET?UART
+
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_UART_DEC?UART
+
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_WIICLASSICCONTROLLER_ISKEYDOWN?WIICLASSICCONTROLLER
+
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_WIICLASSICCONTROLLER_ISKEYHOLD?WIICLASSICCONTROLLER
+BL51 BANKED LINKER/LOCATER V6.22                                                      12/12/2017  17:09:05  PAGE 16
+
+
+
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_WIICLASSICCONTROLLER_ISKEYUP?WIICLASSICCONTROLLER
+
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?WIICLASSICCONTROLLER_GETLANALOGX?WIICLASSICCONTROLLER
+
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?WIICLASSICCONTROLLER_GETLANALOGY?WIICLASSICCONTROLLER
+
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?WIICLASSICCONTROLLER_GETRANALOGX?WIICLASSICCONTROLLER
+
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?WIICLASSICCONTROLLER_GETRANALOGY?WIICLASSICCONTROLLER
+
+Program Size: data=48.2 xdata=0 code=2026
+LINK/LOCATE RUN COMPLETE.  10 WARNING(S),  0 ERROR(S)
